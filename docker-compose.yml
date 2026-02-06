@@ -1,37 +1,38 @@
-version: '3'
 services:
-  cocina:
-    build:
-      context: ./cocina
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./restaurant.db:/app/restaurant.db
-      - ./templates:/app/templates
-
-  historial:
-    build:
-      context: ./historial
-    ports:
-      - "5001:5000"
-    volumes:
-      - ./restaurant.db:/app/restaurant.db
-      - ./templates:/app/templates
-
-  inventario:
-    build:
-      context: ./inventario
-    ports:
-      - "5002:5000"
-    volumes:
-      - ./restaurant.db:/app/restaurant.db
-      - ./templates:/app/templates
-
   home:
     build:
       context: ./home
     ports:
-      - "5003:5000"
+      - "80:5000"
     volumes:
       - ./restaurant.db:/app/restaurant.db
       - ./templates:/app/templates
+    depends_on:
+      - cocina
+      - historial
+      - inventario
+
+  cocina:
+    build:
+      context: ./cocina
+
+    volumes:
+      - ./restaurant.db:/app/restaurant.db
+
+
+  historial:
+    build:
+      context: ./historial
+
+    volumes:
+      - ./restaurant.db:/app/restaurant.db
+
+
+  inventario:
+    build:
+      context: ./inventario
+
+    volumes:
+      - ./restaurant.db:/app/restaurant.db
+
+

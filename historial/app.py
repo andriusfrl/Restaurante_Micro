@@ -6,8 +6,9 @@ database_path = os.path.abspath("/app/restaurant.db")
 
 app = Flask(__name__, static_folder='templates', static_url_path='/static')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+@app.route('/health')
+def health():
+    return {"status": "ok"}
 
 @app.route('/temp')
 def hola_mundo():
@@ -44,3 +45,5 @@ def obtener_historial_compras():
         app.logger.error(f"Error en obtener_historial_compras: {str(e)}")
         return jsonify({"error": "Hubo un error en el servidor"}), 500  # Respuesta de error 500
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
