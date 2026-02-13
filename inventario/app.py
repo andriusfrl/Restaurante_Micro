@@ -1,21 +1,18 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import sqlite3
 import os
 import requests
 from datetime import datetime
 
-database_path = os.path.abspath("/app/restaurant.db")
+database_path = os.getenv("DATABASE_PATH", "/app/data/restaurant.db")
 
 
-app = Flask(__name__, static_folder='templates', static_url_path='/static')
+app = Flask(__name__)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-
-@app.route('/temp')
-def hola_mundo():
-    return render_template('inventario.html')   
-
+@app.route('/health')
+def health():   
+    return {"status": "ok"} 
+ 
 @app.route('/inventario', methods=['GET'])
 def obtener_inventario():
     try:
@@ -53,7 +50,6 @@ def actualizar_tomatos():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -95,7 +91,6 @@ def actualizar_lemon():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -137,7 +132,6 @@ def actualizar_potatos():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -179,7 +173,6 @@ def actualizar_rice():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -221,7 +214,6 @@ def actualizar_ketchup():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -263,7 +255,6 @@ def actualizar_():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -305,7 +296,6 @@ def actualizar_onion():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -347,7 +337,6 @@ def actualizar_cheese():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -389,7 +378,6 @@ def actualizar_meat():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -431,7 +419,6 @@ def actualizar_chicken():
         data = data['data']
 
         # Conecta a la base de datos SQLite
-        database_path = "/app/restaurant.db"
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
 
@@ -449,3 +436,6 @@ def actualizar_chicken():
         return jsonify({'mensaje': 'Datos agregados a la base de datos con éxito.', 'cantidad': chicken_value}), 200
     else:
         return jsonify({'error': 'Error al hacer la solicitud al servicio web'}), 500
+    
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)

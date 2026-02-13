@@ -1,18 +1,15 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import sqlite3
 import os
 import random
 
-database_path = os.path.abspath("/app/restaurant.db")
+database_path = os.getenv("DATABASE_PATH", "/app/data/restaurant.db")
 
-app = Flask(__name__, static_folder='templates', static_url_path='/static')
+app = Flask(__name__)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-
-@app.route('/temp')
-def hola_mundo():
-    return render_template('cocina.html')   
+@app.route('/health')
+def health():
+    return {"status": "ok"}
 
 @app.route('/recetas', methods=['GET'])
 def obtener_recetas():
@@ -76,3 +73,5 @@ def agregar_pedido():
     except Exception as e:
         return jsonify({"error": "Hubo un error en el servidor"}), 500  # Respuesta de error 500
     
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)

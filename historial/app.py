@@ -1,19 +1,15 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import os
 import sqlite3
 
-database_path = os.path.abspath("/app/restaurant.db")
+database_path = os.getenv("DATABASE_PATH", "/app/data/restaurant.db")
 
-app = Flask(__name__, static_folder='templates', static_url_path='/static')
+app = Flask(__name__)
 
 @app.route('/health')
 def health():
     return {"status": "ok"}
-
-@app.route('/temp')
-def hola_mundo():
-    return render_template('historial.html')   
-
+ 
 # Ruta para obtener el historial de pedidos
 @app.route('/historial_pedidos', methods=['GET'])
 def obtener_historial_pedidos():

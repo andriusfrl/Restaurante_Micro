@@ -1,0 +1,16 @@
+# Base de datos
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Variables de entorno
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db

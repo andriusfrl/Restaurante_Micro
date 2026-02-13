@@ -21,7 +21,19 @@ app = Flask(__name__, static_folder='templates', static_url_path='/static')
 
 @app.route('/home')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/historial')
+def historial():
+    return render_template('historial.html')
+
+@app.route('/inventario')
+def inventario():
+    return render_template('inventario.html')
+
+@app.route('/cocina')
+def cocina():
+    return render_template('cocina.html')
 
 @app.route('/test-historial')
 def test_historial():
