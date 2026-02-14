@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 import os
 import sqlite3
 
@@ -9,37 +9,38 @@ app = Flask(__name__)
 @app.route('/health')
 def health():
     return {"status": "ok"}
- 
-# Ruta para obtener el historial de pedidos
+
 @app.route('/historial_pedidos', methods=['GET'])
 def obtener_historial_pedidos():
+    conexion = None
     try:
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
         cursor.execute('SELECT * FROM Pedidos')
         pedidos = cursor.fetchall()
-        cursor.close()
-        conexion.close()
         return jsonify({"historial_pedidos": pedidos})
     except Exception as e:
         app.logger.error(f"Error en obtener_historial_pedidos: {str(e)}")
-        return jsonify({"error": "Hubo un error en el servidor"}), 500  # Respuesta de error 500
+        return jsonify({"error": "Hubo un error en el servidor"}), 500
+    finally:
+        if conexion:
+            conexion.close()
 
-
-# Ruta para obtener el historial de compras
 @app.route('/historial_compras', methods=['GET'])
 def obtener_historial_compras():
+    conexion = None
     try:
         conexion = sqlite3.connect(database_path)
         cursor = conexion.cursor()
         cursor.execute('SELECT * FROM Compras')
         compras = cursor.fetchall()
-        cursor.close()
-        conexion.close()
         return jsonify({"historial_compras": compras})
     except Exception as e:
         app.logger.error(f"Error en obtener_historial_compras: {str(e)}")
-        return jsonify({"error": "Hubo un error en el servidor"}), 500  # Respuesta de error 500
+        return jsonify({"error": "Hubo un error en el servidor"}), 500
+    finally:
+        if conexion:
+            conexion.close()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

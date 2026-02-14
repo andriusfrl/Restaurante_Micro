@@ -1,5 +1,5 @@
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, jsonify, render_template
 import requests
 import os
 
@@ -18,6 +18,10 @@ INVENTARIO_SERVICE = os.getenv(
 )
 
 app = Flask(__name__, static_folder='templates', static_url_path='/static')
+
+@app.route('/health')
+def health():
+    return {"status": "ok"}
 
 @app.route('/home')
 def home():
