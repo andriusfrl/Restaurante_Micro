@@ -13,7 +13,7 @@ app = Flask(__name__)
 def health():   
     return {"status": "ok"} 
  
-@app.route('/inventario', methods=['GET'])
+@app.route('/consultar_inventario', methods=['GET'])
 def obtener_inventario():
     try:
         conexion = sqlite3.connect(database_path)

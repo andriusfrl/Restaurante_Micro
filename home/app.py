@@ -35,20 +35,20 @@ def inventario():
 def cocina():
     return render_template('cocina.html')
 
-@app.route('/test-historial')
-def test_historial():
-    response = requests.get(f'{HISTORIAL_SERVICE}/historial_pedidos')
-    return response.json()
+@app.route('/api/<servicio>/<path:ruta>')
+def proxy(servicio, ruta):
+    servicios = {
+        'historial': HISTORIAL_SERVICE,
+        'inventario': INVENTARIO_SERVICE,
+        'cocina': COCINA_SERVICE,
+    }
 
-@app.route('/test-cocina')
-def test_cocina():
-    r = requests.get(f'{COCINA_SERVICE}/recetas')
-    return r.json()
-
-@app.route('/test-inventario')
-def test_inventario():
-    r = requests.get(f'{INVENTARIO_SERVICE}/inventario')
-    return r.json()
+    url_servicio = servicios.get(servicio)
+    if not url_servicio:
+        return jsonify({"error": "Servicio no encontrado"}), 404
+    
+    respuesta = requests.get(f'{url_servicio}/{ruta}')
+    return (respuesta.content, respuesta.status_code, respuesta.headers.items())
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
