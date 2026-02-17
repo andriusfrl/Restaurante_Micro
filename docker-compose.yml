@@ -1,24 +1,13 @@
 services:
-  # Copia la DB al volumen compartido y se apaga
-  db-init:
-    image: alpine
-    volumes:
-      - ./restaurant.db:/src/restaurant.db
-      - shared-db:/app/data
-    command: sh -c "cp -n /src/restaurant.db /app/data/restaurant.db && echo 'DB lista'"
-    restart: "no"
-    networks:
-      - restaurant-network
-
   home:
     build:
-      context: /home
+      context: ./home
     ports:
       - "80:5000"
     environment:
-      - HISTORIAL_SERVICES=http://historial:5000
-      - INVENTARIO_SERVICES=http://inventario:5000
-      - COCINA_SERVICES=http://cocina:5000
+      - HISTORIAL_SERVICE=http://historial:5000
+      - INVENTARIO_SERVICE=http://inventario:5000
+      - COCINA_SERVICE=http://cocina:5000
     depends_on:
       - historial
       - inventario
@@ -29,51 +18,36 @@ services:
 
   historial:
     build:
-      context: /historial
+      context: ./historial
     expose:
       - "5000"
     environment:
-      - DATABASE_PATH=/app/data/restaurant.db
-    volumes:
-      - shared-db:/app/data
-    depends_on:
-      - db-init
+      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
     networks:
       - restaurant-network
     restart: unless-stopped
 
   inventario:
     build:
-      context: /inventario
+      context: ./inventario
     expose:
       - "5000"
     environment:
-      - DATABASE_PATH=/app/data/restaurant.db
-    volumes:
-      - shared-db:/app/data
-    depends_on:
-      - db-init
+      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
     networks:
       - restaurant-network
     restart: unless-stopped
 
   cocina:
     build:
-      context: /cocina
+      context: ./cocina
     expose:
       - "5000"
     environment:
-      - DATABASE_PATH=/app/data/restaurant.db
-    volumes:
-      - shared-db:/app/data
-    depends_on:
-      - db-init
+      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
     networks:
       - restaurant-network
     restart: unless-stopped
-volumes:
-  shared-db:
-    driver: local
 
 networks:
   restaurant-network:

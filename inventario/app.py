@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
-import sqlite3
+import psycopg2
 import os
 import requests
 from datetime import datetime
 
-database_path = os.getenv("DATABASE_PATH", "/app/data/restaurant.db")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 API_URL = "https://utadeoapi-6dae6e29b5b0.herokuapp.com/api/v1/software-architecture/market-place"
 
@@ -29,27 +29,28 @@ def health():
 
 @app.route('/consultar_inventario', methods=['GET'])
 def obtener_inventario():
+    conexion = None
     try:
-        conexion = sqlite3.connect(database_path)
+        conexion = psycopg2.connect(DATABASE_URL)
         cursor = conexion.cursor()
         cursor.execute('SELECT * FROM Ingredientes')
         inventario = cursor.fetchall()
-        cursor.close()
-        conexion.close()
         return jsonify({"obtener_inventario": inventario})
     except Exception as e:
         app.logger.error(f"Error en obtener_inventarios: {str(e)}")
         return jsonify({"error": "Hubo un error en el servidor"}), 500
+    finally:
+        if conexion:
+            conexion.close()
 
 @app.route('/comprar/<ingrediente>', methods=['GET'])
 def comprar_ingrediente(ingrediente):
-    # Verificar que el ingrediente existe
     ingrediente_id = INGREDIENTES.get(ingrediente)
     if not ingrediente_id:
         return jsonify({"error": f"Ingrediente '{ingrediente}' no encontrado"}), 404
 
+    conexion = None
     try:
-        # Consultar API externa
         response = requests.get(f'{API_URL}?ingredient={ingrediente}')
 
         if response.status_code != 200:
@@ -59,28 +60,29 @@ def comprar_ingrediente(ingrediente):
         cantidad = data['data'][ingrediente]
         fecha_compra = datetime.now()
 
-        # Actualizar base de datos
-        conexion = sqlite3.connect(database_path)
+        conexion = psycopg2.connect(DATABASE_URL)
         cursor = conexion.cursor()
 
         cursor.execute(
-            "INSERT INTO compras (ingrediente_id, cantidad_compras, fecha_compra) VALUES (?, ?, ?)",
+            "INSERT INTO compras (ingrediente_id, cantidad_compras, fecha_compra) VALUES (%s, %s, %s)",
             (ingrediente_id, cantidad, fecha_compra)
         )
 
         cursor.execute(
-            "UPDATE Ingredientes SET cantidad = cantidad + ? WHERE nombre = ?",
+            "UPDATE Ingredientes SET cantidad = cantidad + %s WHERE nombre = %s",
             (cantidad, ingrediente.capitalize())
         )
 
         conexion.commit()
-        conexion.close()
 
         return jsonify({'mensaje': 'Datos agregados a la base de datos con éxito.', 'cantidad': cantidad}), 200
 
     except Exception as e:
         app.logger.error(f"Error en comprar_{ingrediente}: {str(e)}")
         return jsonify({"error": "Hubo un error en el servidor"}), 500
+    finally:
+        if conexion:
+            conexion.close()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

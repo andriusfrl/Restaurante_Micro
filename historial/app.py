@@ -1,8 +1,7 @@
 from flask import Flask, jsonify
 import os
-import sqlite3
-
-database_path = os.getenv("DATABASE_PATH", "/app/data/restaurant.db")
+import psycopg2
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 app = Flask(__name__)
 
@@ -14,7 +13,7 @@ def health():
 def obtener_historial_pedidos():
     conexion = None
     try:
-        conexion = sqlite3.connect(database_path)
+        conexion = psycopg2.connect(DATABASE_URL)
         cursor = conexion.cursor()
         cursor.execute('SELECT * FROM Pedidos')
         pedidos = cursor.fetchall()
@@ -30,7 +29,7 @@ def obtener_historial_pedidos():
 def obtener_historial_compras():
     conexion = None
     try:
-        conexion = sqlite3.connect(database_path)
+        conexion = psycopg2.connect(DATABASE_URL)
         cursor = conexion.cursor()
         cursor.execute('SELECT * FROM Compras')
         compras = cursor.fetchall()
