@@ -27,7 +27,7 @@ def obtener_recetas():
         if conexion:
             conexion.close()
 
-@app.route('/agregar_pedido', methods=['GET'])
+@app.route('/agregar_pedido', methods=['POST'])
 def agregar_pedido():
     conexion = None
     try:

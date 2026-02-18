@@ -1,5 +1,4 @@
-
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import requests
 import os
 
@@ -39,7 +38,7 @@ def inventario():
 def cocina():
     return render_template('cocina.html')
 
-@app.route('/api/<servicio>/<path:ruta>')
+@app.route('/api/<servicio>/<path:ruta>', methods=['GET', 'POST'])
 def proxy(servicio, ruta):
     servicios = {
         'historial': HISTORIAL_SERVICE,
@@ -50,8 +49,12 @@ def proxy(servicio, ruta):
     url_servicio = servicios.get(servicio)
     if not url_servicio:
         return jsonify({"error": "Servicio no encontrado"}), 404
-    
-    respuesta = requests.get(f'{url_servicio}/{ruta}')
+
+    if request.method == 'POST':
+        respuesta = requests.post(f'{url_servicio}/{ruta}')
+    else:
+        respuesta = requests.get(f'{url_servicio}/{ruta}')
+
     return (respuesta.content, respuesta.status_code, respuesta.headers.items())
 
 if __name__ == "__main__":

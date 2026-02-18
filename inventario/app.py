@@ -43,7 +43,7 @@ def obtener_inventario():
         if conexion:
             conexion.close()
 
-@app.route('/comprar/<ingrediente>', methods=['GET'])
+@app.route('/comprar/<ingrediente>', methods=['POST'])
 def comprar_ingrediente(ingrediente):
     ingrediente_id = INGREDIENTES.get(ingrediente)
     if not ingrediente_id:
