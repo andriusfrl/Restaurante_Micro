@@ -1,17 +1,22 @@
 FROM python:3.12-slim
 
-# Establece el directorio de trabajo
 WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia los archivos de la aplicación al contenedor
 COPY . /app
 
 RUN mkdir -p /app/data
 
+# Seguridad: usuario sin privilegios
+RUN useradd -m appuser
+USER appuser
+
 EXPOSE 5000
 
-# Comando para iniciar la aplicación
+# Health check automático
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')" || exit 1
+
 CMD ["python", "app.py"]

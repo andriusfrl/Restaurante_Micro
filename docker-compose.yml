@@ -9,12 +9,20 @@ services:
       - INVENTARIO_SERVICE=http://inventario:5000
       - COCINA_SERVICE=http://cocina:5000
     depends_on:
-      - historial
-      - inventario
-      - cocina
+      historial:
+        condition: service_healthy
+      inventario:
+        condition: service_healthy
+      cocina:
+        condition: service_healthy
     networks:
       - restaurant-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
 
   historial:
     build:
@@ -22,10 +30,21 @@ services:
     expose:
       - "5000"
     environment:
-      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - DATABASE_URL=${DATABASE_URL}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     networks:
       - restaurant-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
 
   inventario:
     build:
@@ -33,10 +52,21 @@ services:
     expose:
       - "5000"
     environment:
-      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - DATABASE_URL=${DATABASE_URL}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     networks:
       - restaurant-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
 
   cocina:
     build:
@@ -44,10 +74,21 @@ services:
     expose:
       - "5000"
     environment:
-      - DATABASE_URL=postgresql://neondb_owner:npg_P9LIMOSeUca2@ep-hidden-sky-ai9jg0kq-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - DATABASE_URL=${DATABASE_URL}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     networks:
       - restaurant-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
 
 networks:
   restaurant-network:
