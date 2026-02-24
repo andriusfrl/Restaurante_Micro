@@ -65,7 +65,7 @@ def agregar_pedido():
 
         for ingrediente_id, cantidad in ingredientes:
             cursor.execute('UPDATE Ingredientes SET cantidad = cantidad - %s WHERE id = %s',
-                          (cantidad, ingrediente_id))
+                           (cantidad, ingrediente_id))
 
         conexion.commit()
 
