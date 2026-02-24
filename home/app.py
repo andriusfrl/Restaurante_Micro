@@ -2,6 +2,7 @@ from flask import Flask, jsonify, render_template, request
 import requests
 import os
 
+
 HISTORIAL_SERVICE = os.getenv(
     "HISTORIAL_SERVICE",
     "http://historial:5000"
@@ -16,7 +17,9 @@ INVENTARIO_SERVICE = os.getenv(
     "http://inventario:5000"
 )
 
+
 app = Flask(__name__, static_folder='templates', static_url_path='/static')
+
 
 @app.after_request
 def add_security_headers(response):
@@ -26,25 +29,31 @@ def add_security_headers(response):
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     return response
 
+
 @app.route('/health')
 def health():
     return {"status": "ok"}
+
 
 @app.route('/home')
 def home():
     return render_template('home.html')
 
+
 @app.route('/historial')
 def historial():
     return render_template('historial.html')
+
 
 @app.route('/inventario')
 def inventario():
     return render_template('inventario.html')
 
+
 @app.route('/cocina')
 def cocina():
     return render_template('cocina.html')
+
 
 @app.route('/api/<servicio>/<path:ruta>', methods=['GET', 'POST'])
 def proxy(servicio, ruta):
@@ -64,6 +73,7 @@ def proxy(servicio, ruta):
         respuesta = requests.get(f'{url_servicio}/{ruta}')
 
     return (respuesta.content, respuesta.status_code, respuesta.headers.items())
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

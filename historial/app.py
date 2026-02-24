@@ -1,9 +1,13 @@
 from flask import Flask, jsonify
 import os
 import psycopg2
+
+
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+
 app = Flask(__name__)
+
 
 @app.after_request
 def add_security_headers(response):
@@ -12,9 +16,11 @@ def add_security_headers(response):
     response.headers['X-XSS-Protection'] = '1; mode=block'
     return response
 
+
 @app.route('/health')
 def health():
     return {"status": "ok"}
+
 
 @app.route('/historial_pedidos', methods=['GET'])
 def obtener_historial_pedidos():
@@ -32,6 +38,7 @@ def obtener_historial_pedidos():
         if conexion:
             conexion.close()
 
+
 @app.route('/historial_compras', methods=['GET'])
 def obtener_historial_compras():
     conexion = None
@@ -47,6 +54,7 @@ def obtener_historial_compras():
     finally:
         if conexion:
             conexion.close()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

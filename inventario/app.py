@@ -4,7 +4,9 @@ import os
 import requests
 from datetime import datetime
 
+
 DATABASE_URL = os.getenv("DATABASE_URL")
+
 
 API_URL = "https://utadeoapi-6dae6e29b5b0.herokuapp.com/api/v1/software-architecture/market-place"
 
@@ -21,7 +23,9 @@ INGREDIENTES = {
     'chicken': '10'
 }
 
+
 app = Flask(__name__)
+
 
 @app.after_request
 def add_security_headers(response):
@@ -30,9 +34,11 @@ def add_security_headers(response):
     response.headers['X-XSS-Protection'] = '1; mode=block'
     return response
 
+
 @app.route('/health')
 def health():
     return {"status": "ok"}
+
 
 @app.route('/consultar_inventario', methods=['GET'])
 def obtener_inventario():
@@ -49,6 +55,7 @@ def obtener_inventario():
     finally:
         if conexion:
             conexion.close()
+
 
 @app.route('/comprar/<ingrediente>', methods=['POST'])
 def comprar_ingrediente(ingrediente):
@@ -91,5 +98,7 @@ def comprar_ingrediente(ingrediente):
         if conexion:
             conexion.close()
 
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+    
