@@ -68,11 +68,11 @@ def proxy(servicio, ruta):
         return jsonify({"error": "Servicio no encontrado"}), 404
 
     if request.method == 'POST':
-        respuesta = requests.post(f'{url_servicio}/{ruta}')
+        respuesta = requests.post(f'{url_servicio}/{ruta}', json=request.get_json())
     else:
         respuesta = requests.get(f'{url_servicio}/{ruta}')
 
-    return (respuesta.content, respuesta.status_code, respuesta.headers.items())
+    return jsonify(respuesta.json()), respuesta.status_code
 
 
 if __name__ == "__main__":
