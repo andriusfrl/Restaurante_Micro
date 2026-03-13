@@ -72,12 +72,12 @@ def proxy(servicio, ruta):
             f'{url_servicio}/{ruta}',
             json=request.get_json(),
             allow_redirects=False
-    )
-    if respuesta.status_code in (301, 302):
-        respuesta = requests.post(
-            respuesta.headers['Location'],
-            json=request.get_json()
         )
+        if respuesta.status_code in (301, 302):
+            respuesta = requests.post(
+                respuesta.headers['Location'],
+                json=request.get_json()
+            )
     else:
         respuesta = requests.get(f'{url_servicio}/{ruta}')
 
