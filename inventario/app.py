@@ -8,7 +8,7 @@ from datetime import datetime
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 
-API_URL = "https://utadeoapi-6dae6e29b5b0.herokuapp.com/api/v1/software-architecture/market-place"
+API_URL = "https://comias-api.vercel.app/v1/marketplace"
 
 INGREDIENTES = {
     'tomato': '1',
