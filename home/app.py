@@ -68,7 +68,16 @@ def proxy(servicio, ruta):
         return jsonify({"error": "Servicio no encontrado"}), 404
 
     if request.method == 'POST':
-        respuesta = requests.post(f'{url_servicio}/{ruta}', json=request.get_json())
+        respuesta = requests.post(
+            f'{url_servicio}/{ruta}',
+            json=request.get_json(),
+            allow_redirects=False
+    )
+    if respuesta.status_code in (301, 302):
+        respuesta = requests.post(
+            respuesta.headers['Location'],
+            json=request.get_json()
+        )
     else:
         respuesta = requests.get(f'{url_servicio}/{ruta}')
 
