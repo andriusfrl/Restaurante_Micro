@@ -3,6 +3,9 @@ import random
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return jsonify({"status": "ok"})
 
 @app.route('/v1/marketplace', methods=['GET'])
 def marketplace():
