@@ -35,6 +35,7 @@ def health():
     return {"status": "ok"}
 
 
+@app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
