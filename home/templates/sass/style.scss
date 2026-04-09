@@ -32,7 +32,7 @@ $font-secondary: 'Merriweather', serif;;
     -ms-transition: 		all $transition $ease;
     transition:         all $transition $ease;
 }
-@mixin fh5co-translate($translatex) {
+@mixin comia-translate($translatex) {
 	-moz-transform: translateX($translatex);
 	-webkit-transform: translateX($translatex);
 	-ms-transform: translateX($translatex);
@@ -104,7 +104,7 @@ body {
 	font-weight: 300;
 	line-height: 2;
 	color: #5e493a;
-	&.fh5co-overflow {
+	&.comia-overflow {
 		overflow-x: auto;	
 	}
 }
@@ -268,7 +268,7 @@ p {
 /*
  * Flexslider
  */
-#fh5co-home { 
+#hero-home { 
 	min-height: 700px;
 	background: $brand-white url(../images/loader.gif) no-repeat center center;
 
@@ -278,7 +278,7 @@ p {
 		z-index: 1;
 		margin-bottom: 0;
 
-		.fh5co-text {
+		.content-text {
 			position: absolute;
 			z-index: 3;
 			width: 100%;
@@ -334,7 +334,7 @@ p {
 				background-size: cover;
 			}
 		}
-		.fh5co-overlay {
+		.comia-overlay {
 			position: absolute;
 			z-index: 3;
 			top: 0;
@@ -351,10 +351,10 @@ p {
 		}
 	}
 }
-.fh5co-main-nav {
+.comia-main-nav {
 	position: relative;
 	background: $brand-white;
-	&.fh5co-shadow {
+	&.comia-shadow {
 		-webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, .3);
 		-moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, .3);
 		-ms-box-shadow: 0 0 7px 0 rgba(0, 0, 0, .3);
@@ -376,9 +376,9 @@ p {
 	&:after {
 		bottom: 2px;
 	}
-	.fh5co-menu-1,
-	.fh5co-menu-2,
-	.fh5co-logo {
+	.nav-menu-left,
+	.nav-menu-right,
+	.nav-brand {
 		vertical-align: middle;
 		float: left;
 		line-height: 0;
@@ -395,14 +395,14 @@ p {
 			}
 		}
 	}
-	.fh5co-menu-1 {
+	.nav-menu-left {
 		text-align: right;
 		width: 40.33%;
 		a {
 			vertical-align: middle;
 		}
 	}
-	.fh5co-logo {
+	.nav-brand {
 		text-align: center;
 		width: 19.33%;
 		font-size: 40px;
@@ -416,7 +416,7 @@ p {
 			// padding: 25px 10px;
 		}
 	}
-	.fh5co-menu-2 {
+	.nav-menu-right {
 		text-align: left;
 		width: 40.33%;
 	}
@@ -424,7 +424,7 @@ p {
 	
 }
 
-.fh5co-heading {
+.comia-heading {
 	.heading {
 		font-size: 50px;
 		font-style: italic;
@@ -457,18 +457,18 @@ p {
 
 
 
-#fh5co-about {
+#comia-about {
 	@include flex;
 	@include flexwrap;
 	background: lighten($brand-black, 90%);
 	width: 100%;
-	.fh5co-2col {
+	.comia-2col {
 		width: 50%;
 		@media screen and (max-width: $screen-lg) {
 			width: 100%;
 		}
 	}
-	.fh5co-text {
+	.content-text {
 		padding: 2em 6em;
 		text-align: left;
 		background: #130d08 url(../images/wood_1.png) repeat;
@@ -516,7 +516,7 @@ p {
 			}
 		}
 	}
-	.fh5co-bg {
+	.comia-bg {
 		background-repeat: no-repeat;
 		background-size: cover;
 		@media screen and (max-width: $screen-lg) {
@@ -530,7 +530,7 @@ p {
 	}
 }
 
-#fh5co-sayings {
+#comia-sayings {
 	padding: 7em 0;
 	@media screen and (max-width :$screen-sm) {
 		padding: 5em 0;
@@ -595,13 +595,13 @@ p {
 	}
 }
 
-#fh5co-featured {
+#comia-featured {
 	padding: 7em 0;
 	background: #130d08 url(../images/wood_1.png) repeat;
 	@media screen and (max-width :$screen-sm) {
 		padding: 5em 0;
 	}
-	.fh5co-heading {
+	.comia-heading {
 		.heading { 
 			position: relative;
 			padding-top: 30px !important;
@@ -624,7 +624,7 @@ p {
 		}
 	}
 
-	.fh5co-grid {
+	.comia-grid {
 		@include flex;
 		@include flexwrap;
 		h2 {
@@ -720,7 +720,7 @@ p {
 				
 			}
 		}
-		> .fh5co-v-half {
+		> .comia-v-half {
 			width: 50%;
 			text-align: center;
 			position: relative;
@@ -729,10 +729,10 @@ p {
 			@media screen and (max-width: $screen-md) {
 				width: 100%;
 			}
-			.fh5co-text {
+			.content-text {
 				background: #f5f5f5;
 			}
-			.fh5co-special-1 {
+			.comia-special-1 {
 				background: #faebcd;
 				&.arrow-left {
 					&:before, &::before {
@@ -748,11 +748,11 @@ p {
 				
 				
 			}
-			> .fh5co-v-col-2 {
+			> .comia-v-col-2 {
 				width: 50%;
 				padding: 20px;
 				position: relative;
-				&.fh5co-bg-img {
+				&.comia-bg-img {
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: center center;
@@ -765,19 +765,19 @@ p {
 				}
 				
 			}
-			> .fh5co-h-row-2 {
+			> .comia-h-row-2 {
 				width: 100%;
 				position: relative;
 				@include flex;
 				@include flexwrap;
-				> .fh5co-v-col-2 {
+				> .comia-v-col-2 {
 					width: 50%;
 					position: relative;
 					padding: 20px;
 					@media screen and (max-width: $screen-sm) {
 						width: 100%;
 					}
-					&.fh5co-bg-img {
+					&.comia-bg-img {
 						background-size: cover;
 						background-repeat: no-repeat;
 						background-position: center center;
@@ -786,8 +786,8 @@ p {
 						}
 					}
 				}
-				&.fh5co-reversed {
-					.fh5co-bg-img {
+				&.comia-reversed {
+					.comia-bg-img {
 						position: absolute;
 						right: 0;
 						bottom: 0;
@@ -806,13 +806,13 @@ p {
 
 }
 
-#fh5co-menus {
+#comia-menus {
 	padding: 7em 0;
 	@media screen and (max-width :$screen-sm) {
 		padding: 5em 0;
 	}
 
-	.fh5co-heading {
+	.comia-heading {
 		.heading { 
 			position: relative;
 			padding-top: 30px !important;
@@ -835,7 +835,7 @@ p {
 		}
 	}
 
-	.fh5co-food-menu {
+	.comia-food-menu {
 		
 		float: left;
 		width: 100%;
@@ -852,7 +852,7 @@ p {
 			font-style: italic;
 			position: relative;
 			
-			&.fh5co-drinks {
+			&.comia-drinks {
 				padding-left: 50px;
 				&:before {
 					background: url(../images/0301-pina-colada.png) no-repeat;
@@ -864,7 +864,7 @@ p {
 					height: 64px;
 				}	
 			}
-			&.fh5co-dishes {
+			&.comia-dishes {
 				padding-left: 80px;
 				&:before {
 					background: url(../images/0302-steak.png) no-repeat;
@@ -889,7 +889,7 @@ p {
 				display: block;
 				float: left;
 				width: 100%;
-				.fh5co-food-desc {
+				.comia-food-desc {
 					clear: both;
 					float: left;
 					width: 80%;
@@ -922,7 +922,7 @@ p {
 						} 
 					}
 				}
-				.fh5co-food-pricing {
+				.comia-food-pricing {
 					float: right;
 					width: 20%;
 					text-align: right;
@@ -935,13 +935,13 @@ p {
 	}
 }
 
-#fh5co-events {
+#timeline-events {
 	padding: 7em 0;
 	background-color: transparent;
 	background-size: cover;
 	background-attachment: fixed;
 	position: relative;
-	> .fh5co-overlay {
+	> .comia-overlay {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -954,7 +954,7 @@ p {
 		z-index: 10;
 		position: relative;
 	}
-	.fh5co-heading {
+	.comia-heading {
 		.heading { 
 			position: relative;
 			padding-top: 30px !important;
@@ -980,7 +980,7 @@ p {
 	@media screen and (max-width :$screen-sm) {
 		padding: 5em 0;
 	}
-	.fh5co-event {
+	.timeline-event {
 		background: $brand-white;
 		padding: 50px;
 		text-align: center;
@@ -996,7 +996,7 @@ p {
 			left: 15px;
 			z-index: 0;
 		}
-		h3, .fh5co-event-meta, p, .btn {
+		h3, .timeline-event-meta, p, .btn {
 			position: relative;
 			z-index: 2;
 		}
@@ -1004,7 +1004,7 @@ p {
 			padding: 0;
 			margin: 0;
 		}
-		.fh5co-event-meta {
+		.timeline-event-meta {
 			margin-bottom: 20px;
 			display: block;
 			color: lighten($brand-black, 50%);
@@ -1035,7 +1035,7 @@ p {
 	}
 }
 
-#fh5co-contact {
+#contact-section {
 	padding: 7em 0;
 	@media screen and (max-width :$screen-sm) {
 		padding: 5em 0;
@@ -1048,7 +1048,7 @@ p {
 		padding: 5em 0;
 	}
 
-	.fh5co-heading {
+	.comia-heading {
 		.heading { 
 			position: relative;
 			padding-top: 30px !important;
@@ -1070,7 +1070,7 @@ p {
 		}
 	}
 
-	.fh5co-social {
+	.comia-social {
 		padding: 0;
 		margin: 0;
 		li {
@@ -1079,7 +1079,7 @@ p {
 
 		}
 	}
-	.fh5co-contact-info {
+	.contact-details {
 		padding: 0;
 		margin: 0 0 1.5em 0;
 		li {
@@ -1097,11 +1097,11 @@ p {
 		}
 	}
 }
-#fh5co-container {
+#comia-container {
 	position: relative;
 	z-index: 10;
 }
-#fh5co-footer {
+#comia-footer {
 	width: 100%;
 	background: rgba(0,0,0,.9);
 	padding: 7em 0;
@@ -1117,7 +1117,7 @@ p {
 		position: relative;
 	}
 }
-.fh5co-social {
+.comia-social {
 	padding: 0;
 	margin: 0;
 	li {
@@ -1141,15 +1141,15 @@ p {
 
 
 
-#fh5co-offcanvas, #fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
+#comia-offcanvas, #comia-container, .mobile-nav-toggle, #comia-footer {
 	@include transition(.5s);
 }
-#fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
+#comia-container, .mobile-nav-toggle, #comia-footer {
 	z-index: 2;
 	position: relative;
 }
 
-#fh5co-offcanvas {
+#comia-offcanvas {
 	display: block;
 	height: 100%;
 	left: 0;
@@ -1175,22 +1175,22 @@ p {
 		}
 	}
 
-	@include fh5co-translate(-275px);
+	@include comia-translate(-275px);
 	@media screen and (max-width: $screen-sm) {
 		display: block;
 	}
 	@include transition(.9s);
 	.offcanvas-visible & {
-		@include fh5co-translate(0px);
+		@include comia-translate(0px);
 		@include transition(.5s);
 	} 
 }
-#fh5co-container, #fh5co-footer, .fh5co-nav-toggle {
+#comia-container, #comia-footer, .mobile-nav-toggle {
 	@media screen and (max-width: $screen-sm) {
-		@include fh5co-translate(0px);
+		@include comia-translate(0px);
 	}
 	.offcanvas-visible & {
-		@include fh5co-translate(275px);
+		@include comia-translate(275px);
 	}
 }
 
@@ -1202,7 +1202,7 @@ p {
 }
 
 // Burger Menu
-.fh5co-nav-toggle {
+.mobile-nav-toggle {
  
   cursor: pointer;
   text-decoration: none;
@@ -1238,22 +1238,22 @@ p {
   }
 }
 
-.fh5co-nav-toggle i::before {
+.mobile-nav-toggle i::before {
   top: -7px;
 }
-.fh5co-nav-toggle i::after {
+.mobile-nav-toggle i::after {
   bottom: -7px;
 }
-.fh5co-nav-toggle:hover i::before {
+.mobile-nav-toggle:hover i::before {
   top: -10px;
 }
-.fh5co-nav-toggle:hover i::after {
+.mobile-nav-toggle:hover i::after {
   bottom: -10px;
 }
-.fh5co-nav-toggle.active i {
+.mobile-nav-toggle.active i {
 	background: transparent;
 }
-.fh5co-nav-toggle.active i::before {
+.mobile-nav-toggle.active i::before {
   top:0;
   -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
@@ -1261,7 +1261,7 @@ p {
        -o-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
-.fh5co-nav-toggle.active i::after {
+.mobile-nav-toggle.active i::after {
   bottom:0;
   -webkit-transform: rotateZ(-45deg);
      -moz-transform: rotateZ(-45deg);
@@ -1269,7 +1269,7 @@ p {
        -o-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
 }
-.fh5co-nav-toggle {
+.mobile-nav-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -1288,14 +1288,14 @@ p {
   
 }
 
-#fh5co-type {
+#comia-type {
 	padding: 7em 0;
 	background-color: transparent;
 	background-size: cover;
 	background-attachment: fixed;
 	position: relative;
 
-	> .fh5co-overlay {
+	> .comia-overlay {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -1309,7 +1309,7 @@ p {
 		position: relative;
 	}
 	
-	.fh5co-type {
+	.comia-type {
 		float: left;
 		width: 100%;
 		text-align: center;
@@ -1376,3 +1376,4 @@ p {
 .row-padded {
 	padding-bottom: 40px;
 }
+

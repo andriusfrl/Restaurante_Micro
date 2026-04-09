@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
+<html class="no-js">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Cocina &mdash;</title>
+	<title>Comia's &mdash; Cocina</title>
 
+	<!-- hojas de estilo y librerías -->
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
@@ -16,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple-line-icons.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flexslider.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
@@ -24,157 +21,144 @@
 
 	</head>
 	<body>
-		<div id="fh5co-container">
-			<div class="js-sticky">
-				<div class="fh5co-main-nav">
-					<div class="container-fluid">
-						<div class="fh5co-menu-1">
-							<a href="/home">Home</a>
-							<a href="/historial">Historial</a>
-						</div>
-						<div class="fh5co-logo">
-							<a href="/home">comia's</a>
-						</div>
-						<div class="fh5co-menu-2">
-							<a href="/cocina">Cocina</a>
-							<a href="/inventario">Inventario</a>
-						</div>
+		<!-- page hero: cabecera con imagen de fondo -->
+		<div class="page-hero" style="background-image: url(https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&auto=format&fit=crop);">
+			<div class="page-hero-overlay"></div>
+			<!-- nav -->
+			<div class="top-nav">
+				<div class="nav-inner">
+					<div class="nav-logo">
+						<a href="/home">Comia's</a>
 					</div>
+					<nav class="nav-links">
+						<a href="/home">Home</a>
+						<a href="/historial">Historial</a>
+						<a href="/cocina" class="active">Cocina</a>
+						<a href="/inventario">Inventario</a>
+					</nav>
 				</div>
+			</div>
+			<!-- título y breadcrumb superpuesto -->
+			<div class="page-hero-content text-center">
+				<span class="hero-eyebrow">NUESTRO MEN&Uacute;</span>
+				<h1 class="page-hero-title">Especialidades de la Casa</h1>
+				<div class="page-hero-divider"></div>
+				<p class="hero-subtitle">Cada plato es una obra de arte elaborada con los ingredientes m&aacute;s frescos de Colombia.</p>
 			</div>
 		</div>
 
-        <div id="fh5co-menus" data-section="menu">
+        <!-- menú: tarjetas de cada plato -->
+        <div id="menu-section" data-section="menu" style="background: #eee7d5; padding: 60px 0 120px 0;">
             <div class="container">
-                <div class="row text-center fh5co-heading row-padded">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2 class="heading to-animate">Food Menu</h2>
-                        <p class="sub-heading to-animate">Aquí encontraras los mejores platos disponibles de nuestro restaurante</p>
+                <div class="row locations-grid-row">
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://storage.googleapis.com/fitia_recipe_images/CO-R-V-00000128%2Fv3%2Frect.jpeg" alt="Arroz con Pollo" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Arroz con Pollo</h3>
+                                    <span class="menu-price">$24.500</span>
+                                </div>
+                                <p class="menu-desc">Arroz cremoso cocinado a fuego lento con pollo tierno marinado en especias criollas, achiote y hierbas frescas de nuestra huerta.</p>
+                                <p class="menu-ingredients">Chicken &middot; Rice &middot; Ketchup</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row row-padded">
-                    <div class="col-md-6">
-                        <div class="fh5co-food-menu to-animate-2">
-                            <h2 class="fh5co-drinks">Especiales</h2>
-                            <ul>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://surtidoradeaves.com/wp-content/uploads/2017/08/arroz-con-pollo.png" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Arroz Pollo</h3>
-                                            <p>1 Chicken | 2 Rice  | 1 Ketchup</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $24.500
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://s1.eestatic.com/2021/07/02/actualidad/593453503_194032618_1706x960.jpg" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Ensalada</h3>
-                                            <p>1 Tomato | 1 Onion | 1 Lettuce</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $13.000
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://i0.wp.com/surtidoradeaves.com/wp-content/uploads/2017/03/churrasco.png?fit=750%2C500&ssl=1" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Churrasco Grilled</h3>
-                                            <p>1 Meat | 1 Cheese | 2 Potatoes</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $27.000
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://cdn.colombia.com/gastronomia/2012/10/01/papas-rellenas-con-carne-o-queso-2922.jpg" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Cheese Meat Potato</h3>
-                                            <p>2 Cheese | 1 Meat | 1 Potato</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $20.000
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://media.istockphoto.com/id/1188150002/es/foto/arroz-frito-con-verduras-comida-asi%C3%A1tica.jpg?s=612x612&w=0&k=20&c=I5LRDgS7-3ssqu4n3kZKl8dB1HqSJhAaZJmM-xvsty8=" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Bowl Todo</h3>
-                                            <p>1 Tomato | 1 Lemon  | 1 Potato | 2 Rice | 1 Ketchup | 1 Lettuce | 1 Onion | 1 Cheese | 1 Meat | 1 Chicken</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $40.000
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fh5co-food-desc">
-                                        <figure>
-                                            <img src="https://mccain.com.mx/wp-content/uploads/2021/08/Papas-Tradicionales-al-Chilli.jpg" class="img-responsive">
-                                        </figure>
-                                        <div>
-                                            <h3>Chilli Fried Potatoes</h3>
-                                            <p>1 Cheese | 1 Meat | 1 Tomato | 1 Onion | 1 Ketchup</p>
-                                        </div>
-                                    </div>
-                                    <div class="fh5co-food-pricing">
-                                        $25.500
-                                    </div>
-                                </li>
-                            </ul>
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://www.recetassinlactosa.com/wp-content/uploads/2020/07/ensalada_mediterranea.jpg" alt="Ensalada" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Ensalada del Huerto</h3>
+                                    <span class="menu-price">$13.000</span>
+                                </div>
+                                <p class="menu-desc">Lechugas selectas, tomate cherry confitado y cebolla morada caramelizada, aderezadas con vinagreta de c&iacute;tricos y aceite de oliva extra virgen.</p>
+                                <p class="menu-ingredients">Tomato &middot; Onion &middot; Lettuce</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://images.ctfassets.net/szelmdrourcp/qJcHzKlGXpeLjGU67fldY/9fa99f923b7367bddd76ef749b20e587/KFD_ArgentinianChurrasco_3qtr_v2_s04_72-Desktop.jpg?fm=webp&w=2048&q=75" alt="Churrasco" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Churrasco a la Brasa</h3>
+                                    <span class="menu-price">$27.000</span>
+                                </div>
+                                <p class="menu-desc">Corte prime de res sellado en brasa de lea&ntilde;a, acompa&ntilde;ado de papa criolla gratinada con queso andino y chimichurri de la casa.</p>
+                                <p class="menu-ingredients">Meat &middot; Cheese &middot; Potato</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/2CMGVBGZBVBTLGZPN6S25F6G3A.jpg" alt="Cheese Meat Potato" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Papa Rellena Gourmet</h3>
+                                    <span class="menu-price">$20.000</span>
+                                </div>
+                                <p class="menu-desc">Papa criolla rellena de carne de res molida sazonada y coraz&oacute;n de queso fundido, horneada al punto y servida con salsa r&oacute;stiga.</p>
+                                <p class="menu-ingredients">Cheese &middot; Meat &middot; Potato</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://corp.ametllerorigen.com/wp-content/uploads/2023/10/bolw_saludable_1.jpg" alt="Bowl Todo" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Bowl Comia's</h3>
+                                    <span class="menu-price">$40.000</span>
+                                </div>
+                                <p class="menu-desc">La experiencia completa: arroz, pollo, carne, verduras frescas y queso fundido en un bowl que re&uacute;ne lo mejor de nuestra cocina en un solo plato.</p>
+                                <p class="menu-ingredients">Tomato &middot; Lemon &middot; Potato &middot; Rice &middot; Ketchup &middot; Lettuce &middot; Onion &middot; Cheese &middot; Meat &middot; Chicken</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- EDITAR PLATO: Cambia la imagen, nombre y precio aquí abajo -->
+                        <div class="menu-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxFjaPAh0XJtnmp8uElxRA3BPY30eXVOr0A&s" alt="Chilli Fried Potatoes" class="menu-card-img">
+                            <div class="menu-card-body">
+                                <div class="menu-card-header">
+                                    <h3>Papas al Chilli</h3>
+                                    <span class="menu-price">$25.500</span>
+                                </div>
+                                <p class="menu-desc">Papas artesanales fritas en aceite de girasol, cubiertas con carne desmenuzada, salsa de tomate casera, cebolla crocante y queso derretido.</p>
+                                <p class="menu-ingredients">Cheese &middot; Meat &middot; Tomato &middot; Onion &middot; Ketchup</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 text-center to-animate-2">
-                        <p><a href="/api/cocina/recetas" class="btn btn-primary btn-outline">Ver recetas!</a></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 text-center to-animate-2">
-                        <p><button onclick="agregarPedido()" class="btn btn-primary btn-outline">Hacer pedido!</button></p>
-                    </div>
+                <div class="menu-actions">
+                    <a href="/api/cocina/recetas" class="btn btn-primary btn-outline">Ver Recetas</a>
+                    <button onclick="agregarPedido()" class="btn btn-primary">Hacer Pedido</button>
                 </div>
             </div>
         </div>
 
+		<!-- función que llama a la API para registrar un pedido -->
 		<script>
 		function agregarPedido() {
 			fetch('/api/cocina/agregar_pedido', { method: 'POST' })
 				.then(response => response.json())
-				.then(data => alert(data.mensaje + ' Plato: ' + data.plato))
-				.catch(error => alert('Error al agregar pedido'));
+				.then(data => showNotification(data.mensaje + ' &mdash; Plato: ' + data.plato, 'success'))
+				.catch(error => showNotification('No fue posible registrar el pedido. Por favor intente nuevamente.', 'error'));
 		}
 		</script>
 
+	<!-- scripts al final para no bloquear el render -->
 	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/moment.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 	</body>

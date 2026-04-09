@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-#fh5co-header {
+#site-header {
 	// position: relative;
 	position: absolute;
 	z-index: 99;
@@ -391,18 +391,18 @@ h1, h2, h3, h4, h5, h6 {
 	@include transition(.3s);
 }
 
-#fh5co-our-services,
-#fh5co-about-us,
-#fh5co-features,
-#fh5co-testimonials,
-#fh5co-pricing,
-#fh5co-press {
+#comia-our-services,
+#comia-about-us,
+#comia-features,
+#testimonials-section,
+#comia-pricing,
+#comia-press {
 	padding: 7em 0;
 	@media screen and (max-width: $screen-xs) {
 		padding: 5em 0;
 	}
 }
-#fh5co-testimonials {
+#testimonials-section {
 	background: $brand-primary;
 	.section-heading {
 		h2 {
@@ -481,7 +481,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 }
-#fh5co-pricing {
+#comia-pricing {
 	.price-box {
 	    border: 2px solid #ECEEF0;
 	    text-align: center;
@@ -546,11 +546,11 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-#fh5co-our-services,
-#fh5co-press {
+#comia-our-services,
+#comia-press {
 	background: #f4f4f4;
 }
-#fh5co-our-services {
+#comia-our-services {
 	
 	.box {
 		// min-height: 360px;
@@ -624,15 +624,15 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-#fh5co-features {
+#comia-features {
 	padding: 7em 0;
 	@media screen and (max-width: $screen-sm) {
 		padding: 4em 0;
 	}
-	.fh5co-service {
+	.service-card {
 		margin-bottom: 30px;
 		float: left;
-		.fh5co-icon {
+		.comia-icon {
 			float: left;
 			width: 20%;
 			// border: 1px solid red;
@@ -641,7 +641,7 @@ h1, h2, h3, h4, h5, h6 {
 				color: $brand-primary;
 			}
 		}
-		.fh5co-desc {
+		.comia-desc {
 			width: 80%;
 			// border: 1px solid red;
 			float:right;
@@ -652,8 +652,8 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 }
-#fh5co-press {
-	.fh5co-press-item {
+#comia-press {
+	.comia-press-item {
 		background: $brand-white;
 		float: left;
 		margin-bottom: 30px;
@@ -664,8 +664,8 @@ h1, h2, h3, h4, h5, h6 {
 		@media screen and (max-width: $screen-xs) {
 			display: block!important;
 		}
-		.fh5co-press-text,
-		.fh5co-press-img {
+		.comia-press-text,
+		.comia-press-img {
 			width: 50%;
 			@media screen and (max-width: $screen-xs) {
 				height: inherit;
@@ -674,10 +674,10 @@ h1, h2, h3, h4, h5, h6 {
 				display: block!important;
 			}
 		}
-		.fh5co-press-text {
+		.comia-press-text {
 			float: left;
 			padding: 20px;
-			.fh5co-press-title {
+			.comia-press-title {
 		
 				margin: 0 0 20px 0;
 				padding: 0 0 10px 0;
@@ -685,7 +685,7 @@ h1, h2, h3, h4, h5, h6 {
 				font-size: 20px;
 				color: $brand-darker;
 				position: relative;
-				.fh5co-border {
+				.comia-border {
 					position: absolute;
 					left: 0;
 					bottom: 0;
@@ -695,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
 				}
 			}
 		}
-		.fh5co-press-img {
+		.comia-press-img {
 			position: absolute;
 			right: 0;
 			bottom: 0;
@@ -713,7 +713,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Burger Menu
-.fh5co-nav-toggle {
+.mobile-nav-toggle {
   width:25px;
   height:25px;
   cursor: pointer;
@@ -750,22 +750,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.fh5co-nav-toggle i::before {
+.mobile-nav-toggle i::before {
   top: -7px;
 }
-.fh5co-nav-toggle i::after {
+.mobile-nav-toggle i::after {
   bottom: -7px;
 }
-.fh5co-nav-toggle:hover i::before {
+.mobile-nav-toggle:hover i::before {
   top: -10px;
 }
-.fh5co-nav-toggle:hover i::after {
+.mobile-nav-toggle:hover i::after {
   bottom: -10px;
 }
-.fh5co-nav-toggle.active i {
+.mobile-nav-toggle.active i {
 	background: transparent;
 }
-.fh5co-nav-toggle.active i::before {
+.mobile-nav-toggle.active i::before {
   top:0;
   -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
@@ -773,7 +773,7 @@ h1, h2, h3, h4, h5, h6 {
        -o-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
-.fh5co-nav-toggle.active i::after {
+.mobile-nav-toggle.active i::after {
   bottom:0;
   -webkit-transform: rotateZ(-45deg);
      -moz-transform: rotateZ(-45deg);
@@ -781,7 +781,7 @@ h1, h2, h3, h4, h5, h6 {
        -o-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
 }
-.fh5co-nav-toggle {
+.mobile-nav-toggle {
   position: absolute;
   top: 12px;
   right: 0px;
@@ -992,8 +992,8 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 }
-.owl-carousel-fullwidth.fh5co-light-arrow .owl-controls .owl-nav .owl-next,
-.owl-carousel-fullwidth.fh5co-light-arrow .owl-controls .owl-nav .owl-prev {
+.owl-carousel-fullwidth.comia-light-arrow .owl-controls .owl-nav .owl-next,
+.owl-carousel-fullwidth.comia-light-arrow .owl-controls .owl-nav .owl-prev {
 	i {
 		color: $brand-white;
 	}
@@ -1050,7 +1050,7 @@ h1, h2, h3, h4, h5, h6 {
 .owl-carousel-fullwidth {
 	
 
-	.item, .fh5co-owl-text-wrap {
+	.item, .comia-owl-text-wrap {
 		height: 800px;
 		display: table;
 		width: 100%;
@@ -1059,7 +1059,7 @@ h1, h2, h3, h4, h5, h6 {
 			padding: 5em 0;
 		}
 	}
-	.fh5co-owl-text-wrap {
+	.comia-owl-text-wrap {
 		position: relative;
 		// bottom: -5em;
 	}
@@ -1105,7 +1105,7 @@ h1, h2, h3, h4, h5, h6 {
 	
 		
 
-		.fh5co-owl-text {
+		.comia-owl-text {
 			display: table-cell;
 			vertical-align: middle;
 			z-index: 10;
@@ -1122,12 +1122,12 @@ h1, h2, h3, h4, h5, h6 {
 					border-bottom: 1px solid rgba(255,255,255,1);
 				}
 			}
-			.fh5co-lead, .fh5co-lead-2, .fh5co-sub-lead {
+			.comia-lead, .comia-lead-2, .comia-sub-lead {
 				color: $brand-white;
 				margin: 0;
 				padding: 0;
 			}
-			.fh5co-lead {
+			.comia-lead {
 				font-weight: 700;
 				margin-bottom: 20px;
 				margin-top: 0;
@@ -1145,7 +1145,7 @@ h1, h2, h3, h4, h5, h6 {
 				}
 			}
 			
-			.fh5co-sub-lead {
+			.comia-sub-lead {
 				font-size: 30px;
 				line-height: 30px;
 				line-height: 42px;
@@ -1195,10 +1195,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Menu Animate
-.fh5co-animated {
+.is-animated {
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+
 

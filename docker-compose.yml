@@ -5,9 +5,9 @@ services:
     ports:
       - "80:5000"
     environment:
-      - HISTORIAL_SERVICE = https://comias-historial.onrender.com
-      - INVENTARIO_SERVICE = https://comias-inventario.onrender.com
-      - COCINA_SERVICE = https://comias-cocina.onrender.com
+      - HISTORIAL_SERVICE=https://comias-historial.onrender.com
+      - INVENTARIO_SERVICE=https://comias-inventario.onrender.com
+      - COCINA_SERVICE=https://comias-cocina.onrender.com
     depends_on:
       historial:
         condition: service_healthy

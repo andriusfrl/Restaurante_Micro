@@ -1,3 +1,4 @@
+﻿/* fuente de íconos icomoon cargada localmente */
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -5,6 +6,7 @@
   font-weight: normal;
   font-style: normal;
 }
+/* estilos base del documento */
 body {
   font-family: "Merriweather", serif;
   font-size: 18px;
@@ -12,10 +14,11 @@ body {
   line-height: 2;
   color: #5e493a;
 }
-body.fh5co-overflow {
+body.nav-overflow {
   overflow-x: auto;
 }
 
+/* links del template — sobreescritos al final del archivo */
 a {
   color: #fb6e14;
   -webkit-transition: 0.5s;
@@ -26,15 +29,18 @@ a:hover, a:focus, a:active {
   color: #bf4c03;
 }
 
+/* tipografía de títulos con Playfair Display */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
   color: #000;
 }
 
+/* márgenes base para párrafos */
 p {
   margin-bottom: 30px;
 }
 
+/* botones — base, tamaños y todas las variantes de color */
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
@@ -62,6 +68,7 @@ p {
   outline: none !important;
 }
 
+/* botón principal usado en toda la web para llamadas a la acción (ej. comprar, reservar) */
 .btn-primary {
   background: #fb6e14;
   color: #fff;
@@ -81,6 +88,7 @@ p {
   color: #fff;
 }
 
+/* botón de confirmación o pasos positivos (ej. finalizar pedido) */
 .btn-success {
   background: #58ca7e;
   color: #fff;
@@ -100,6 +108,7 @@ p {
   color: #fff;
 }
 
+/* botón secundario para dar aviso o solicitar más información */
 .btn-info {
   background: #1784fb;
   color: #fff;
@@ -119,6 +128,7 @@ p {
   color: #fff;
 }
 
+/* botón de alerta para acciones que requieren precaución */
 .btn-warning {
   background: #fed330;
   color: #fff;
@@ -138,6 +148,7 @@ p {
   color: #fff;
 }
 
+/* botón reservado para acciones destructivas (ej. eliminar del historial, borrar cuenta) */
 .btn-danger {
   background: #fb4f59;
   color: #fff;
@@ -157,6 +168,7 @@ p {
   color: #fff;
 }
 
+/* botón secundario transparente, usado comúnmente sobre fondos oscuros o tarjetas */
 .btn-outline {
   background: none;
   border: 2px solid gray;
@@ -171,6 +183,7 @@ p {
   box-shadow: none;
 }
 
+/* inputs de formulario */
 .form-control {
   box-shadow: none;
   background: transparent;
@@ -185,20 +198,21 @@ p {
   border-color: #fb6e14;
 }
 
-/*
- * Flexslider
- */
-#fh5co-home {
+/* flexslider — slider de imágenes del hero, waypoints que controla la animación */
+/* contenedor base para la portada principal con margen mínimo de altura */
+#hero-section {
   min-height: 700px;
   background: #fff url(../images/loader.gif) no-repeat center center;
 }
-#fh5co-home .flexslider {
+/* elimina los bordes del carrusel para darle apariencia de ancho completo */
+#hero-section .flexslider {
   border: none;
   position: relative;
   z-index: 1;
   margin-bottom: 0;
 }
-#fh5co-home .flexslider .fh5co-text {
+/* centra verticalmente el texto promocional por encima del slider */
+#hero-section .flexslider .hero-text {
   position: absolute;
   z-index: 3;
   width: 100%;
@@ -206,7 +220,8 @@ p {
   margin-top: -212px;
   text-align: center;
 }
-#fh5co-home .flexslider .fh5co-text h1 {
+/* estiliza el título gigantesco principal de bienvenida */
+#hero-section .flexslider .hero-text h1 {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
@@ -219,11 +234,12 @@ p {
   transition: 0.3s;
 }
 @media screen and (max-width: 992px) {
-  #fh5co-home .flexslider .fh5co-text h1 {
+  #hero-section .flexslider .hero-text h1 {
     font-size: 100px;
   }
 }
-#fh5co-home .flexslider .fh5co-text h2 {
+/* estiliza el pequeño subtítulo o llamado a la acción debajo del título gigante */
+#hero-section .flexslider .hero-text h2 {
   margin: 0;
   padding: 0;
   font-family: "Merriweather", serif;
@@ -236,23 +252,24 @@ p {
   transition: 0.3s;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-home .flexslider .fh5co-text h2 {
+  #hero-section .flexslider .hero-text h2 {
     font-size: 20px;
   }
 }
-#fh5co-home .flexslider .fh5co-text h2 span {
+#hero-section .flexslider .hero-text h2 span {
   font-family: "Playfair Display", serif;
   font-style: italic;
   text-transform: none;
 }
-#fh5co-home .flexslider .fh5co-text h2 a {
+#hero-section .flexslider .hero-text h2 a {
   color: #fb6e14;
 }
-#fh5co-home .flexslider .slides li {
+/* asegura que las imágenes del carrusel cubran completamente el fondo sin repetirse */
+#hero-section .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#fh5co-home .flexslider .fh5co-overlay {
+#hero-section .flexslider .dark-overlay {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -262,22 +279,23 @@ p {
   opacity: .5;
   background: #000;
 }
-#fh5co-home .flexslider .flex-control-nav,
-#fh5co-home .flexslider .flex-direction-nav {
+/* oculta las flechas y puntos de paginación del slider para evitar distracciones */
+#hero-section .flexslider .flex-control-nav,
+#hero-section .flexslider .flex-direction-nav {
   display: none;
 }
 
-.fh5co-main-nav {
+/* nav del template — estructura base, sobreescrita por completo en los overrides */
+.top-nav {
   position: relative;
-  background: #fff;
 }
-.fh5co-main-nav.fh5co-shadow {
+.top-nav.nav-shadow {
   -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
   -ms-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
 }
-.fh5co-main-nav:before, .fh5co-main-nav:after {
+.top-nav:before, .top-nav:after {
   content: "";
   position: absolute;
   left: 0;
@@ -285,70 +303,80 @@ p {
   width: 100%;
   background: #e6e6e6;
 }
-.fh5co-main-nav:before {
+/* posiciona la línea decorativa superior a 2 píxeles hacia abajo */
+.top-nav:before {
   top: 2px;
 }
-.fh5co-main-nav:after {
+/* posiciona la línea decorativa inferior a 2 píxeles hacia arriba */
+.top-nav:after {
   bottom: 2px;
 }
-.fh5co-main-nav .fh5co-menu-1,
-.fh5co-main-nav .fh5co-menu-2,
-.fh5co-main-nav .fh5co-logo {
+.top-nav .nav-menu-left,
+.top-nav .nav-menu-right,
+.top-nav .nav-brand {
   vertical-align: middle;
   float: left;
   line-height: 0;
 }
-.fh5co-main-nav .fh5co-menu-1 a,
-.fh5co-main-nav .fh5co-menu-2 a,
-.fh5co-main-nav .fh5co-logo a {
+/* aplica relleno y formato inline a los enlaces internos del menú y logo */
+.top-nav .nav-links a,
+.top-nav .nav-menu-left a,
+.top-nav .nav-menu-right a,
+.top-nav .nav-brand a,
+#offcanvas-menu a {
   padding: 35px 10px;
   color: #130d08;
+  /* CAMBIAR TAMAÑO LETRA DEL MENÚ: aumenta los píxeles aquí para afectar todos los enlaces de la barra de navegación */
+  font-size: 14px;
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
   *display: inline;
 }
-.fh5co-main-nav .fh5co-menu-1 a:hover, .fh5co-main-nav .fh5co-menu-1 a:focus, .fh5co-main-nav .fh5co-menu-1 a:active,
-.fh5co-main-nav .fh5co-menu-2 a:hover,
-.fh5co-main-nav .fh5co-menu-2 a:focus,
-.fh5co-main-nav .fh5co-menu-2 a:active,
-.fh5co-main-nav .fh5co-logo a:hover,
-.fh5co-main-nav .fh5co-logo a:focus,
-.fh5co-main-nav .fh5co-logo a:active {
+/* retira el subrayado por defecto cuando el usuario pasa el mouse sobre cualquier enlace del menú */
+.top-nav .nav-menu-left a:hover, .top-nav .nav-menu-left a:focus, .top-nav .nav-menu-left a:active,
+.top-nav .nav-menu-right a:hover,
+.top-nav .nav-menu-right a:focus,
+.top-nav .nav-menu-right a:active,
+.top-nav .nav-brand a:hover,
+.top-nav .nav-brand a:focus,
+.top-nav .nav-brand a:active {
   outline: none;
   text-decoration: none;
 }
-.fh5co-main-nav .fh5co-menu-1 a.active,
-.fh5co-main-nav .fh5co-menu-2 a.active,
-.fh5co-main-nav .fh5co-logo a.active {
+.top-nav .nav-menu-left a.active,
+.top-nav .nav-menu-right a.active,
+.top-nav .nav-brand a.active {
   color: #fb6e14;
 }
-.fh5co-main-nav .fh5co-menu-1 {
+.top-nav .nav-menu-left {
   text-align: right;
   width: 40.33%;
 }
-.fh5co-main-nav .fh5co-menu-1 a {
+/* asegura que el texto se alinee al centro verticalmente dentro de los enlaces del menú izquierdo */
+.top-nav .nav-menu-left a {
   vertical-align: middle;
 }
-.fh5co-main-nav .fh5co-logo {
+.top-nav .nav-brand {
   text-align: center;
   width: 19.33%;
-  font-size: 40px;
+  font-size: 60px;
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-style: italic;
 }
-.fh5co-main-nav .fh5co-logo a {
+/* pequeño ajuste vertical hacia arriba para compensar la itálica del logo */
+.top-nav .nav-brand a {
   position: relative;
   top: -5px;
   display: inline-block;
 }
-.fh5co-main-nav .fh5co-menu-2 {
+.top-nav .nav-menu-right {
   text-align: left;
   width: 40.33%;
 }
 
-.fh5co-heading .heading {
+/* encabezados de sección genéricos del template */
+.section-heading .heading {
   font-size: 50px;
   font-style: italic;
   position: relative;
@@ -356,11 +384,11 @@ p {
   margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
-  .fh5co-heading .heading {
+  .section-heading .heading {
     font-size: 30px;
   }
 }
-.fh5co-heading .heading:after {
+.section-heading .heading:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -370,18 +398,19 @@ p {
   background: #fb6e14;
   margin-left: -20px;
 }
-.fh5co-heading .sub-heading {
+.section-heading .sub-heading {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
-  .fh5co-heading .sub-heading {
+  .section-heading .sub-heading {
     font-size: 18px;
   }
 }
 
-#fh5co-about {
+/* about — layout flex base, colores sobreescritos en overrides */
+#about-section {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -393,28 +422,30 @@ p {
   background: #e6e6e6;
   width: 100%;
 }
-#fh5co-about .fh5co-2col {
+#about-section .split-col {
   width: 50%;
 }
 @media screen and (max-width: 1200px) {
-  #fh5co-about .fh5co-2col {
+  #about-section .split-col {
     width: 100%;
   }
 }
-#fh5co-about .fh5co-text {
+#about-section .hero-text {
   padding: 2em 6em;
   text-align: left;
   background: #130d08 url(../images/wood_1.png) repeat;
 }
 @media screen and (max-width: 1200px) {
-  #fh5co-about .fh5co-text {
+  #about-section .hero-text {
     padding: 1em;
   }
 }
-#fh5co-about .fh5co-text .btn {
+/* asegura que los botones en la sección nosotros sean blancos */
+#about-section .hero-text .btn {
   color: #fff;
 }
-#fh5co-about .fh5co-text .heading {
+/* estiliza el título secundario dentro del área de texto destacado */
+#about-section .hero-text .heading {
   margin-bottom: 30px;
   color: #fff;
   font-style: italic;
@@ -423,7 +454,8 @@ p {
   padding-bottom: 30px;
   text-align: center;
 }
-#fh5co-about .fh5co-text .heading:after {
+/* inserta una pequeña línea naranja decorativa debajo del título principal */
+#about-section .hero-text .heading:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -433,11 +465,12 @@ p {
   background: #fb6e14;
   margin-left: -20px;
 }
-#fh5co-about .fh5co-text p {
+/* color tierra general para los párrafos descriptivos en la sección */
+#about-section .hero-text p {
   line-height: 2;
   color: #a99c92;
 }
-#fh5co-about .fh5co-text p span.firstcharacter {
+#about-section .hero-text p span.firstcharacter {
   float: left;
   color: #903;
   font-size: 75px;
@@ -451,84 +484,100 @@ p {
   color: #fff;
   font-family: "Playfair Display", serif;
 }
-#fh5co-about .fh5co-bg {
+#about-section .col-bg {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* hace que las columnas de fondo midan mínimo medio metro vertical para pantallas grandes */
 @media screen and (max-width: 1200px) {
-  #fh5co-about .fh5co-bg {
+  #about-section .col-bg {
     width: 100%;
     min-height: 500px;
   }
 }
+/* reduce el tamaño mínimo vertical de las columnas en celulares */
 @media screen and (max-width: 768px) {
-  #fh5co-about .fh5co-bg {
+  #about-section .col-bg {
     width: 100%;
     min-height: 300px;
   }
 }
 
-#fh5co-sayings {
+/* frases — estilos del carrusel de citas */
+/* contenedor principal que da espacio generoso alrededor de las frases */
+#quotes-section {
   padding: 7em 0;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-sayings {
+  #quotes-section {
     padding: 5em 0;
   }
 }
-#fh5co-sayings .flexslider .slides li {
+#quotes-section .flexslider .slides li {
   font-size: 40px;
   line-height: 1.5;
 }
-#fh5co-sayings .flexslider .slides li blockquote {
+/* remueve el margen por defecto del marco de cita para centrar el texto con limpieza */
+#quotes-section .flexslider .slides li blockquote {
   padding-left: 0;
   border-left: none;
 }
+/* ajusta el relleno de las frases específicamente en vistas móviles */
 @media screen and (max-width: 768px) {
-  #fh5co-sayings .flexslider .slides li blockquote {
+  #quotes-section .flexslider .slides li blockquote {
     padding: 0 20px;
   }
 }
-#fh5co-sayings .flexslider .slides li blockquote p {
+/* tamaño gigantesco para la fuente de la cita textual */
+#quotes-section .flexslider .slides li blockquote p {
   font-size: 40px;
   line-height: 1.5;
 }
+/* reduce la fuente textual a la mitad al estar en un dispositivo pequeño */
 @media screen and (max-width: 768px) {
-  #fh5co-sayings .flexslider .slides li blockquote p {
+  #quotes-section .flexslider .slides li blockquote p {
     font-size: 20px;
     line-height: 1.5;
   }
 }
-#fh5co-sayings .flexslider .slides li blockquote p.quote-author {
+/* nombre de la persona autora de dicha frase, típicamente posicionado por debajo */
+#quotes-section .flexslider .slides li blockquote p.quote-author {
   font-size: 20px;
   color: gray;
 }
+/* reduce un poco el tamaño del autor si la pantalla se estrecha */
 @media screen and (max-width: 768px) {
-  #fh5co-sayings .flexslider .slides li blockquote p.quote-author {
+  #quotes-section .flexslider .slides li blockquote p.quote-author {
     font-size: 18px;
   }
 }
-#fh5co-sayings .flexslider .flex-control-paging {
+/* contenedor base para los botones circulares (puntos de paginación) del slider */
+#quotes-section .flexslider .flex-control-paging {
   position: relative;
 }
-#fh5co-sayings .flexslider .flex-control-paging.flex-control-nav {
+/* reposiciona todos los botones circulares más abajo del carrusel para no chocar con letras */
+#quotes-section .flexslider .flex-control-paging.flex-control-nav {
   bottom: -70px;
 }
+/* adapta esta separación de los botones circulares en pantallas chicas */
 @media screen and (max-width: 768px) {
-  #fh5co-sayings .flexslider .flex-control-paging.flex-control-nav {
+  #quotes-section .flexslider .flex-control-paging.flex-control-nav {
     bottom: -60px;
   }
 }
-#fh5co-sayings .flexslider .flex-control-paging li a {
+/* diseño de los puntos individuales inactivos del slider, grises transparentes */
+#quotes-section .flexslider .flex-control-paging li a {
   width: 14px;
   height: 14px;
   background: rgba(0, 0, 0, 0.2);
   box-shadow: none;
 }
-#fh5co-sayings .flexslider .flex-control-paging li a:active, #fh5co-sayings .flexslider .flex-control-paging li a:focus {
+/* evita un contorno feo cuando el usuario clica el botón circular */
+#quotes-section .flexslider .flex-control-paging li a:active, #quotes-section .flexslider .flex-control-paging li a:focus {
   outline: none;
 }
-#fh5co-sayings .flexslider .flex-control-paging li a.flex-active {
+/* diseño del circulito seleccionado que muestra qué frase estamos viendo en este momento */
+#quotes-section .flexslider .flex-control-paging li a.flex-active {
   top: 2px;
   position: relative;
   background: transparent;
@@ -536,21 +585,25 @@ p {
   border: 2px solid #fb6e14;
 }
 
-#fh5co-featured {
+/* grid de ubicaciones del template (no se usa, reemplazada por #locations-section en overrides) */
+#locations-grid {
   padding: 7em 0;
   background: #130d08 url(../images/wood_1.png) repeat;
 }
+/* aplica espaciado inferior en dispositivos pequeños para el grid de ubicaciones antiguo */
 @media screen and (max-width: 768px) {
-  #fh5co-featured {
+  #locations-grid {
     padding: 5em 0;
   }
 }
-#fh5co-featured .fh5co-heading .heading {
+/* asegura borde blanco contrastante superior en el título del grid principal */
+#locations-grid .section-heading .heading {
   position: relative;
   padding-top: 30px !important;
   color: #fff;
 }
-#fh5co-featured .fh5co-heading .heading:before, #fh5co-featured .fh5co-heading .heading::before {
+/* añade el ilustrativo de los platos en el encabezado del grid de locación antiguo */
+#locations-grid .section-heading .heading:before, #locations-grid .section-heading .heading::before {
   height: 64px;
   width: 64px;
   position: absolute;
@@ -561,10 +614,12 @@ p {
   margin-top: -50px;
   margin-left: -32px;
 }
-#fh5co-featured .fh5co-heading .sub-heading {
+/* color suave para el texto secundario que acompaña al título del grid de locación */
+#locations-grid .section-heading .sub-heading {
   color: #a99c92;
 }
-#fh5co-featured .fh5co-grid {
+/* contenedor flex general para agrupar los elementos en la grilla visual */
+#locations-grid .location-grid {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -574,21 +629,25 @@ p {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
 }
-#fh5co-featured .fh5co-grid h2 {
+/* estabiliza los márgenes del subtítulo dentro del contenedor de locación específico */
+#locations-grid .location-grid h2 {
   font-size: 20px;
   margin-bottom: 0;
 }
-#fh5co-featured .fh5co-grid p {
+/* color oscuro por defecto para párrafos internos en este bloque promocional de sede */
+#locations-grid .location-grid p {
   line-height: 1.6;
   font-size: 16px;
   color: #222;
 }
-#fh5co-featured .fh5co-grid .pricing {
+/* estilo gigante llamativo para mostrar los precios o promociones */
+#locations-grid .location-grid .pricing {
   font-size: 40px;
   display: block;
   padding-top: 20px;
 }
-#fh5co-featured .fh5co-grid .pricing:after {
+/* añade línea estética corta de color base debajo del bloque de precio */
+#locations-grid .location-grid .pricing:after {
   content: "";
   position: absolute;
   width: 40px;
@@ -597,7 +656,8 @@ p {
   margin-left: -20px;
   background: #fb6e14;
 }
-#fh5co-featured .fh5co-grid .arrow-left:before, #fh5co-featured .fh5co-grid .arrow-left::before {
+/* dibuja una flecha decorativa hacia la izquierda empleando trucos de bordes */
+#locations-grid .location-grid .arrow-left:before, #locations-grid .location-grid .arrow-left::before {
   content: "";
   position: absolute;
   z-index: 999;
@@ -610,8 +670,9 @@ p {
   border-bottom: 15px solid transparent;
   border-right: 15px solid #f5f5f5;
 }
+/* adapta esta flecha izquierda para apuntar temporalmente hacia abajo en móvil */
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid .arrow-left:before, #fh5co-featured .fh5co-grid .arrow-left::before {
+  #locations-grid .location-grid .arrow-left:before, #locations-grid .location-grid .arrow-left::before {
     right: auto !important;
     left: 15px !important;
     top: 0 !important;
@@ -623,7 +684,8 @@ p {
     border-bottom: 15px solid #f5f5f5 !important;
   }
 }
-#fh5co-featured .fh5co-grid .arrow-right:before, #fh5co-featured .fh5co-grid .arrow-right::before {
+/* dibuja una flecha decorativa hacia la derecha empleando truco geométrico de borde css */
+#locations-grid .location-grid .arrow-right:before, #locations-grid .location-grid .arrow-right::before {
   content: "";
   position: absolute;
   z-index: 999;
@@ -636,8 +698,9 @@ p {
   border-bottom: 15px solid transparent;
   border-left: 15px solid #f5f5f5;
 }
+/* revierte la dirección visual de la flecha si la pantalla alcanza resolución ipad */
 @media screen and (max-width: 992px) {
-  #fh5co-featured .fh5co-grid .arrow-right:before, #fh5co-featured .fh5co-grid .arrow-right::before {
+  #locations-grid .location-grid .arrow-right:before, #locations-grid .location-grid .arrow-right::before {
     right: auto !important;
     left: 0 !important;
     margin-left: -15px !important;
@@ -645,8 +708,9 @@ p {
     border-right: 15px solid #f5f5f5 !important;
   }
 }
+/* rota y reorienta las flechas con la pantalla tan comprimida como un celular vertical */
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid .arrow-right:before, #fh5co-featured .fh5co-grid .arrow-right::before {
+  #locations-grid .location-grid .arrow-right:before, #locations-grid .location-grid .arrow-right::before {
     right: auto !important;
     left: 15px !important;
     top: 0 !important;
@@ -658,7 +722,8 @@ p {
     border-bottom: 15px solid #f5f5f5 !important;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half {
+/* clase auxiliar para formar diseños divididos exactamente a la mitad del contenedor contenedor amplio */
+#locations-grid .location-grid > .half-grid {
   width: 50%;
   text-align: center;
   position: relative;
@@ -671,48 +736,57 @@ p {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
 }
+/* destruye las particiones cincuenta cincuenta bajo resolución ajustada mostrando al cien */
 @media screen and (max-width: 992px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half {
+  #locations-grid .location-grid > .half-grid {
     width: 100%;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-text {
+/* impone color de fondo hueso al texto hero de grid interno */
+#locations-grid .location-grid > .half-grid .hero-text {
   background: #f5f5f5;
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-special-1 {
+/* asigna beige claro resaltando elementos destacados */
+#locations-grid .location-grid > .half-grid .col-featured {
   background: #faebcd;
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-special-1.arrow-left:before, #fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-special-1.arrow-left::before {
+/* unifica color de la flechas y la tabla si esta columna está como columna principal */
+#locations-grid .location-grid > .half-grid .col-featured.arrow-left:before, #locations-grid .location-grid > .half-grid .col-featured.arrow-left::before {
   border-right: 15px solid #faebcd;
 }
+/* hace la misma lógica de contraintolerancia en smartphones para el modo unificado beige */
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-special-1.arrow-left:before, #fh5co-featured .fh5co-grid > .fh5co-v-half .fh5co-special-1.arrow-left::before {
+  #locations-grid .location-grid > .half-grid .col-featured.arrow-left:before, #locations-grid .location-grid > .half-grid .col-featured.arrow-left::before {
     border-left: 15px solid transparent !important;
     border-right: 15px solid transparent !important;
     border-bottom: 15px solid #faebcd !important;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-v-col-2 {
+/* submódulos genéricos con ancho limitado dentro de las divisiones de la grilla principal */
+#locations-grid .location-grid > .half-grid > .half-col {
   width: 50%;
   padding: 20px;
   position: relative;
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-v-col-2.fh5co-bg-img {
+/* hace escalar la imagen de fondo con limpieza cubriendo toda su fracción */
+#locations-grid .location-grid > .half-grid > .half-col.col-bg-img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
+/* baja fuertemente alto forzado cuando nos apila en formato móvil el grid principal */
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-v-col-2.fh5co-bg-img {
+  #locations-grid .location-grid > .half-grid > .half-col.col-bg-img {
     height: 200px;
   }
 }
+/* aplana el flujo visual rellenando ancho tras el breakpoint global de diseño fluido */
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-v-col-2 {
+  #locations-grid .location-grid > .half-grid > .half-col {
     width: 100%;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2 {
+#locations-grid .location-grid > .half-grid > .row-half {
   width: 100%;
   position: relative;
   display: -webkit-box;
@@ -724,34 +798,34 @@ p {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2 > .fh5co-v-col-2 {
+#locations-grid .location-grid > .half-grid > .row-half > .half-col {
   width: 50%;
   position: relative;
   padding: 20px;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2 > .fh5co-v-col-2 {
+  #locations-grid .location-grid > .half-grid > .row-half > .half-col {
     width: 100%;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2 > .fh5co-v-col-2.fh5co-bg-img {
+#locations-grid .location-grid > .half-grid > .row-half > .half-col.col-bg-img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2 > .fh5co-v-col-2.fh5co-bg-img {
+  #locations-grid .location-grid > .half-grid > .row-half > .half-col.col-bg-img {
     height: 200px;
   }
 }
-#fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2.fh5co-reversed .fh5co-bg-img {
+#locations-grid .location-grid > .half-grid > .row-half.row-reversed .col-bg-img {
   position: absolute;
   right: 0;
   bottom: 0;
   top: 0;
 }
 @media screen and (max-width: 992px) {
-  #fh5co-featured .fh5co-grid > .fh5co-v-half > .fh5co-h-row-2.fh5co-reversed .fh5co-bg-img {
+  #locations-grid .location-grid > .half-grid > .row-half.row-reversed .col-bg-img {
     position: relative;
     right: inherit;
     top: inherit;
@@ -759,19 +833,20 @@ p {
   }
 }
 
-#fh5co-menus {
+/* menú — estructura base del template, estilos visuales sobreescritos en overrides */
+#menu-section {
   padding: 7em 0;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-menus {
+  #menu-section {
     padding: 5em 0;
   }
 }
-#fh5co-menus .fh5co-heading .heading {
+#menu-section .section-heading .heading {
   position: relative;
   padding-top: 30px !important;
 }
-#fh5co-menus .fh5co-heading .heading:before, #fh5co-menus .fh5co-heading .heading::before {
+#menu-section .section-heading .heading:before, #menu-section .section-heading .heading::before {
   height: 64px;
   width: 64px;
   position: absolute;
@@ -782,31 +857,34 @@ p {
   margin-top: -50px;
   margin-left: -32px;
 }
-#fh5co-menus .fh5co-heading .sub-heading {
+#menu-section .section-heading .sub-heading {
   color: #a99c92;
 }
-#fh5co-menus .fh5co-food-menu {
+/* contenedor para la lista completa de platillos en el menú */
+#menu-section .dish-list {
   float: left;
   width: 100%;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-menus .fh5co-food-menu {
+  #menu-section .dish-list {
     margin-bottom: 30px;
     float: left;
     width: 100%;
     clear: none !important;
   }
 }
-#fh5co-menus .fh5co-food-menu h2 {
+/* título principal de cada categoría del menú (ej. platos fuertes) */
+#menu-section .dish-list h2 {
   margin-bottom: 50px;
   font-style: italic;
   position: relative;
 }
-#fh5co-menus .fh5co-food-menu h2.fh5co-drinks {
+#menu-section .dish-list h2.menu-category-title {
   padding-left: 50px;
 }
-#fh5co-menus .fh5co-food-menu h2.fh5co-drinks:before {
+/* ícono decorativo para los títulos de la categoría por defecto */
+#menu-section .dish-list h2.menu-category-title:before {
   background: url(../images/spoon-and-fork-silhouette-icon-free-vector.jpg) no-repeat;
   content: "";
   position: absolute;
@@ -815,10 +893,10 @@ p {
   width: 64px;
   height: 64px;
 }
-#fh5co-menus .fh5co-food-menu h2.fh5co-dishes {
+#menu-section .dish-list h2.comia-dishes {
   padding-left: 80px;
 }
-#fh5co-menus .fh5co-food-menu h2.fh5co-dishes:before {
+#menu-section .dish-list h2.comia-dishes:before {
   background: url(../images/0302-steak.png) no-repeat;
   content: "";
   position: absolute;
@@ -827,11 +905,12 @@ p {
   width: 64px;
   height: 45px;
 }
-#fh5co-menus .fh5co-food-menu ul {
+#menu-section .dish-list ul {
   padding: 0;
   margin: 0;
 }
-#fh5co-menus .fh5co-food-menu ul li {
+/* elemento individual de plato listado en el menú */
+#menu-section .dish-list ul li {
   padding: 0 0 20px 0;
   margin: 0 0 20px 0;
   border-bottom: 1px dotted #ccc;
@@ -839,18 +918,18 @@ p {
   float: left;
   width: 100%;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc {
+#menu-section .dish-list ul li .dish-item {
   clear: both;
   float: left;
   width: 80%;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > figure {
+#menu-section .dish-list ul li .dish-item > figure {
   width: 20%;
   float: left;
   position: relative;
   margin-right: 4%;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > figure img {
+#menu-section .dish-list ul li .dish-item > figure img {
   max-width: 100%;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -858,23 +937,25 @@ p {
   border-radius: 4px;
   margin-bottom: 0;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > div {
+#menu-section .dish-list ul li .dish-item > div {
   width: 75%;
   float: left;
   position: relative;
   font-size: 14px;
   line-height: 1.5;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > div p {
+#menu-section .dish-list ul li .dish-item > div p {
   margin: 0;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > div h3 {
+/* nombre específico del platillo en la lista */
+#menu-section .dish-list ul li .dish-item > div h3 {
   margin: 0 0 10px 0;
   padding: 0;
   font-size: 20px;
   color: #000;
 }
-#fh5co-menus .fh5co-food-menu ul li .fh5co-food-pricing {
+/* precio destacado del platillo individual */
+#menu-section .dish-list ul li .dish-price {
   float: right;
   width: 20%;
   text-align: right;
@@ -882,14 +963,16 @@ p {
   color: #fb6e14;
 }
 
-#fh5co-events {
+/* historial — estructura base del template, sobreescrita en overrides */
+#history-section {
   padding: 7em 0;
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
 }
-#fh5co-events > .fh5co-overlay {
+/* velo oscuro para mejorar legibilidad del texto sobre la imagen de fondo */
+#history-section > .dark-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -898,16 +981,19 @@ p {
   background: rgba(0, 0, 0, 0.7);
   z-index: 9;
 }
-#fh5co-events > .container {
+/* asegura que el contenedor principal quede por encima del velo oscuro */
+#history-section > .container {
   z-index: 10;
   position: relative;
 }
-#fh5co-events .fh5co-heading .heading {
+/* da color blanco al texto del título para que contraste con el fondo oscuro */
+#history-section .section-heading .heading {
   position: relative;
   padding-top: 30px !important;
   color: #fff;
 }
-#fh5co-events .fh5co-heading .heading:before, #fh5co-events .fh5co-heading .heading::before {
+/* inserta la imagen decorativa del gorro de chef sobre el título */
+#history-section .section-heading .heading:before, #history-section .section-heading .heading::before {
   height: 64px;
   width: 49px;
   position: absolute;
@@ -918,22 +1004,26 @@ p {
   margin-top: -50px;
   margin-left: -24px;
 }
-#fh5co-events .fh5co-heading .sub-heading {
+/* subtítulo en color arena para separar visualmente el título del resto del contenido */
+#history-section .section-heading .sub-heading {
   color: #a99c92;
 }
+/* reduce el relleno interno de la sección en celulares para ahorrar espacio en la pantalla */
 @media screen and (max-width: 768px) {
-  #fh5co-events {
+  #history-section {
     padding: 5em 0;
   }
 }
-#fh5co-events .fh5co-event {
+/* crea una tarjeta blanca individual para destacar cada evento histórico o paso */
+#history-section .timeline-event {
   background: #fff;
   padding: 50px;
   text-align: center;
   margin-bottom: 30px;
   position: relative;
 }
-#fh5co-events .fh5co-event:before {
+/* añade un marco doble decorativo gris al interior de cada tarjeta blanca */
+#history-section .timeline-event:before {
   border: 2px solid #e6e6e6;
   content: "";
   position: absolute;
@@ -943,22 +1033,26 @@ p {
   left: 15px;
   z-index: 0;
 }
-#fh5co-events .fh5co-event h3, #fh5co-events .fh5co-event .fh5co-event-meta, #fh5co-events .fh5co-event p, #fh5co-events .fh5co-event .btn {
+/* eleva jerárquicamente el texto y el botón para que aparezcan encima del marco decorativo */
+#history-section .timeline-event h3, #history-section .timeline-event .event-meta, #history-section .timeline-event p, #history-section .timeline-event .btn {
   position: relative;
   z-index: 2;
 }
-#fh5co-events .fh5co-event h3 {
+/* elimina márgenes del título del evento para mantener el texto limpio */
+#history-section .timeline-event h3 {
   padding: 0;
   margin: 0;
 }
-#fh5co-events .fh5co-event .fh5co-event-meta {
+/* texto en gris claro para la fecha, rol o etiqueta que acompaña el evento */
+#history-section .timeline-event .event-meta {
   margin-bottom: 20px;
   display: block;
   color: gray;
   position: relative;
   padding-bottom: 10px;
 }
-#fh5co-events .fh5co-event .fh5co-event-meta:after, #fh5co-events .fh5co-event .fh5co-event-meta::after {
+/* subraya la etiqueta meta con una línea naranja delgada */
+#history-section .timeline-event .event-meta:after, #history-section .timeline-event .event-meta::after {
   background: #bfbfbf;
   background: #fb6e14;
   content: "";
@@ -969,39 +1063,40 @@ p {
   height: 2px;
   margin-left: -20px;
 }
-#fh5co-events .fh5co-event p {
+/* interlineado amplio y legible para los párrafos de texto dentro de la historia */
+#history-section .timeline-event p {
   font-size: 16px;
   line-height: 1.8;
 }
-#fh5co-events .fh5co-event p:last-child {
+#history-section .timeline-event p:last-child {
   margin-bottom: 0;
 }
-#fh5co-events .fh5co-event .btn {
+#history-section .timeline-event .btn {
   margin-bottom: 0;
 }
 
-#fh5co-contact {
+/* contacto — sección del template, no usada en este proyecto */
+/* contenedor de la sección de contacto */
+#contact-section {
   padding: 7em 0;
 }
-@media screen and (max-width: 768px) {
-  #fh5co-contact {
-    padding: 5em 0;
-  }
-}
-#fh5co-contact h3 {
+/* título de introducción en italica para el contacto */
+#contact-section h3 {
   margin-bottom: 30px;
   font-style: italic;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-contact {
+  #contact-section {
     padding: 5em 0;
   }
 }
-#fh5co-contact .fh5co-heading .heading {
+/* ajusta el espaciado y fondo del título de la sección de contacto */
+#contact-section .section-heading .heading {
   position: relative;
   padding-top: 30px !important;
 }
-#fh5co-contact .fh5co-heading .heading:before, #fh5co-contact .fh5co-heading .heading::before {
+/* añade el ícono ilustrativo en la cabecera de contacto */
+#contact-section .section-heading .heading:before, #contact-section .section-heading .heading::before {
   height: 61px;
   width: 61px;
   position: absolute;
@@ -1012,40 +1107,47 @@ p {
   margin-top: -50px;
   margin-left: -24px;
 }
-#fh5co-contact .fh5co-heading .sub-heading {
+/* color suave para el texto del subtítulo */
+#contact-section .section-heading .sub-heading {
   color: #a99c92;
 }
-#fh5co-contact .fh5co-social {
+#contact-section .social-links {
   padding: 0;
   margin: 0;
 }
-#fh5co-contact .fh5co-social li {
+#contact-section .social-links li {
   padding: 0;
   margin: 0;
 }
-#fh5co-contact .fh5co-contact-info {
+/* lista desordenada donde se albergan los datos directos de contacto */
+#contact-section .contact-details {
   padding: 0;
   margin: 0 0 1.5em 0;
 }
-#fh5co-contact .fh5co-contact-info li {
+/* elemento individual de lista (teléfono, email, dirección) con sangría para su icono */
+#contact-section .contact-details li {
   position: relative;
   padding: 0;
   margin: 0 0 1.5em 0;
   padding-left: 50px;
   list-style: none;
 }
-#fh5co-contact .fh5co-contact-info li i {
+/* alinea verticalmente el ícono a la izquierda de la información del contacto */
+#contact-section .contact-details li i {
   position: absolute;
   top: .4em;
   left: 0;
 }
 
-#fh5co-container {
+/* wrapper y footer — estructura de layout general */
+/* envuelve el contenido principal para separarlo del menú offcanvas u oculto */
+#site-wrapper {
   position: relative;
   z-index: 10;
 }
 
-#fh5co-footer {
+/* proporciona color negro al pie de página con texto oscuro para mantener sobriedad */
+#site-footer {
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   padding: 7em 0;
@@ -1055,51 +1157,56 @@ p {
   color: rgba(255, 255, 255, 0.5);
 }
 @media screen and (max-width: 768px) {
-  #fh5co-footer {
+  #site-footer {
     padding: 5em 0;
   }
 }
 @media screen and (max-width: 480px) {
-  #fh5co-footer {
+  #site-footer {
     height: inherit;
     position: relative;
   }
 }
 
-.fh5co-social {
+/* estilos listados de redes sociales globales */
+.social-links {
   padding: 0;
   margin: 0;
 }
-.fh5co-social li {
+.social-links li {
   padding: 0;
   margin: 0;
   list-style: none;
   display: inline;
 }
-.fh5co-social li a {
+.social-links li a {
   font-size: 30px;
   padding: 10px;
 }
-.fh5co-social li a i {
+.social-links li a i {
   font-size: 30px;
 }
-.fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
+.social-links li a:hover, .social-links li a:active, .social-links li a:focus {
   outline: none;
   text-decoration: none;
 }
 
-#fh5co-offcanvas, #fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
+/* transiciones base para elementos del layout */
+#offcanvas-menu, #site-wrapper, .nav-toggle, #site-footer {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 
-#fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
+/* posicionamiento general de las capas del documento */
+#site-wrapper, .nav-toggle, #site-footer {
   z-index: 2;
   position: relative;
 }
 
-#fh5co-offcanvas {
+/* offcanvas — menú lateral deslizable para mobile */
+/* panel lateral oculto que aparece al abrir menú móvil */
+#offcanvas-menu {
   display: block;
   height: 100%;
   left: 0;
@@ -1119,26 +1226,31 @@ p {
   -o-transition: 0.9s;
   transition: 0.9s;
 }
-#fh5co-offcanvas a {
+/* enlaces en el panel lateral oscuro con texto blanco casi opaco */
+#offcanvas-menu a {
   display: block;
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
   padding: 7px 0;
 }
-#fh5co-offcanvas a:hover, #fh5co-offcanvas a:focus, #fh5co-offcanvas a:active {
+/* efecto interactivo color naranja en los enlaces del menú móvil */
+#offcanvas-menu a:hover, #offcanvas-menu a:focus, #offcanvas-menu a:active {
   outline: none;
   text-decoration: none;
   color: #fb6e14;
 }
-#fh5co-offcanvas a.active {
+/* asegura que la página que estás visitando quede en color naranja para saber dónde estás */
+#offcanvas-menu a.active {
   color: #fb6e14;
 }
+/* activa explícitamente el menú oculto para las versiones móviles */
 @media screen and (max-width: 768px) {
-  #fh5co-offcanvas {
+  #offcanvas-menu {
     display: block;
   }
 }
-.offcanvas-visible #fh5co-offcanvas {
+/* estado final visible del menú lateral cuando la clase activadora está presente */
+.offcanvas-visible #offcanvas-menu {
   -moz-transform: translateX(0px);
   -webkit-transform: translateX(0px);
   -ms-transform: translateX(0px);
@@ -1149,8 +1261,9 @@ p {
   transition: 0.5s;
 }
 
+/* posicionamiento basal nulo para capas principales previas al despliegue en móviles */
 @media screen and (max-width: 768px) {
-  #fh5co-container, #fh5co-footer, .fh5co-nav-toggle {
+  #site-wrapper, #site-footer, .nav-toggle {
     -moz-transform: translateX(0px);
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
@@ -1158,7 +1271,8 @@ p {
     transform: translateX(0px);
   }
 }
-.offcanvas-visible #fh5co-container, .offcanvas-visible #fh5co-footer, .offcanvas-visible .fh5co-nav-toggle {
+/* empuja a toda la página hacia la derecha para hacer espacio al menú lateral */
+.offcanvas-visible #site-wrapper, .offcanvas-visible #site-footer, .offcanvas-visible .nav-toggle {
   -moz-transform: translateX(275px);
   -webkit-transform: translateX(275px);
   -ms-transform: translateX(275px);
@@ -1166,27 +1280,31 @@ p {
   transform: translateX(275px);
 }
 
-.js-sticky {
+/* nav sticky y botón hamburguesa para mobile */
+/* fija la antigua barra de navegación a lo alto para resoluciones amplias */
+.sticky-nav {
   display: block;
 }
+/* desactiva el anclaje sticky superior clásico en pantallas telefónicas */
 @media screen and (max-width: 768px) {
-  .js-sticky {
+  .sticky-nav {
     display: none;
   }
 }
 
-.fh5co-nav-toggle {
+/* contenedor interactivo del botón de menú hamburguesa base */
+.nav-toggle {
   cursor: pointer;
   text-decoration: none;
 }
-.fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {
+.nav-toggle.active i::before, .nav-toggle.active i::after {
   background: #fff;
 }
-.fh5co-nav-toggle:hover, .fh5co-nav-toggle:focus, .fh5co-nav-toggle:active {
+.nav-toggle:hover, .nav-toggle:focus, .nav-toggle:active {
   outline: none;
   border-bottom: none !important;
 }
-.fh5co-nav-toggle i {
+.nav-toggle i {
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
@@ -1201,7 +1319,7 @@ p {
   background: #fff;
   transition: all .2s ease-out;
 }
-.fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {
+.nav-toggle i::before, .nav-toggle i::after {
   content: '';
   width: 30px;
   height: 2px;
@@ -1213,27 +1331,27 @@ p {
   transition: 0.2s;
 }
 
-.fh5co-nav-toggle i::before {
+.nav-toggle i::before {
   top: -7px;
 }
 
-.fh5co-nav-toggle i::after {
+.nav-toggle i::after {
   bottom: -7px;
 }
 
-.fh5co-nav-toggle:hover i::before {
+.nav-toggle:hover i::before {
   top: -10px;
 }
 
-.fh5co-nav-toggle:hover i::after {
+.nav-toggle:hover i::after {
   bottom: -10px;
 }
 
-.fh5co-nav-toggle.active i {
+.nav-toggle.active i {
   background: transparent;
 }
 
-.fh5co-nav-toggle.active i::before {
+.nav-toggle.active i::before {
   top: 0;
   -webkit-transform: rotateZ(45deg);
   -moz-transform: rotateZ(45deg);
@@ -1242,7 +1360,7 @@ p {
   transform: rotateZ(45deg);
 }
 
-.fh5co-nav-toggle.active i::after {
+.nav-toggle.active i::after {
   bottom: 0;
   -webkit-transform: rotateZ(-45deg);
   -moz-transform: rotateZ(-45deg);
@@ -1251,7 +1369,7 @@ p {
   transform: rotateZ(-45deg);
 }
 
-.fh5co-nav-toggle {
+.nav-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -1269,19 +1387,20 @@ p {
   border-radius: 4px;
 }
 @media screen and (max-width: 768px) {
-  .fh5co-nav-toggle {
+  .nav-toggle {
     display: block;
   }
 }
 
-#fh5co-type {
+/* inventario — estructura base del template, sobreescrita en overrides */
+#inventory-section {
   padding: 7em 0;
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
 }
-#fh5co-type > .fh5co-overlay {
+#inventory-section > .dark-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1290,21 +1409,21 @@ p {
   background: rgba(0, 0, 0, 0.7);
   z-index: 9;
 }
-#fh5co-type > .container {
+#inventory-section > .container {
   z-index: 10;
   position: relative;
 }
-#fh5co-type .fh5co-type {
+#inventory-section .inventory-section {
   float: left;
   width: 100%;
   text-align: center;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-type .fh5co-type {
+  #inventory-section .inventory-section {
     margin-bottom: 30px;
   }
 }
-#fh5co-type h3 {
+#inventory-section h3 {
   margin-bottom: 30px;
   font-style: italic;
   color: #fff;
@@ -1312,10 +1431,10 @@ p {
   text-align: center;
   padding-top: 110px;
 }
-#fh5co-type h3.with-icon {
+#inventory-section h3.with-icon {
   position: relative;
 }
-#fh5co-type h3.with-icon:before, #fh5co-type h3.with-icon::before {
+#inventory-section h3.with-icon:before, #inventory-section h3.with-icon::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -1329,47 +1448,740 @@ p {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-#fh5co-type h3.with-icon.icon-1:before, #fh5co-type h3.with-icon.icon-1::before {
+#inventory-section h3.with-icon.icon-1:before, #inventory-section h3.with-icon.icon-1::before {
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tomato-Torrent-Icon.png/120px-Tomato-Torrent-Icon.png) no-repeat center center;
 }
-#fh5co-type h3.with-icon.icon-2:before, #fh5co-type h3.with-icon.icon-2::before {
+#inventory-section h3.with-icon.icon-2:before, #inventory-section h3.with-icon.icon-2::before {
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEiO8iWMsAS89goRQaavVk2DqT4aQqqfkEVw&usqp=CAU) no-repeat center center;
 }
-#fh5co-type h3.with-icon.icon-3:before, #fh5co-type h3.with-icon.icon-3::before {
+#inventory-section h3.with-icon.icon-3:before, #inventory-section h3.with-icon.icon-3::before {
   background: url(data:image/jpeg;base64,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) no-repeat center center;
 }
-#fh5co-type h3.with-icon.icon-4:before, #fh5co-type h3.with-icon.icon-4::before {
+#inventory-section h3.with-icon.icon-4:before, #inventory-section h3.with-icon.icon-4::before {
   background: url(data:image/jpeg;base64,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) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-5:before, #fh5co-type h3.with-icon.icon-5::before {
+inventory-section h3.with-icon.icon-5:before, #inventory-section h3.with-icon.icon-5::before {
   background: url(https://www.nestleprofessional-latam.com/sites/default/files/styles/np_product_thumbnail/public/2023-06/MAGGI%C2%AE%20Salsa%20de%20Tomate%20Ketchup%20Botella%2012x794g.png?itok=n0Jz83BK) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-6:before, #fh5co-type h3.with-icon.icon-6::before {
+inventory-section h3.with-icon.icon-6:before, #inventory-section h3.with-icon.icon-6::before {
   background: url(https://mpseeds.eu/environment/cache/images/120_120_productGfx_1160/Lettuce-Microgreens-9509.webp) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-7:before, #fh5co-type h3.with-icon.icon-7::before {
+inventory-section h3.with-icon.icon-7:before, #inventory-section h3.with-icon.icon-7::before {
   background: url(https://2.imimg.com/data2/SV/SH/IMFCP-4048469/images-white_onion-250x250.png) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-8:before, #fh5co-type h3.with-icon.icon-8::before {
+inventory-section h3.with-icon.icon-8:before, #inventory-section h3.with-icon.icon-8::before {
   background: url(https://www.petosevic.com/sites/default/files/resource/gi-polish-cheese-120x120.jpg) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-9:before, #fh5co-type h3.with-icon.icon-9::before {
+inventory-section h3.with-icon.icon-9:before, #inventory-section h3.with-icon.icon-9::before {
   background: url(https://victoriastreetmarket.com/image/cache/catalog/Category/beef-120x120.jpg) no-repeat center center;
 }
-fh5co-type h3.with-icon.icon-10:before, #fh5co-type h3.with-icon.icon-10::before {
+inventory-section h3.with-icon.icon-10:before, #inventory-section h3.with-icon.icon-10::before {
   background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEhAOERAQFhASFxEXFxUVFw8QEBsSFRcWGRYVFhYYHSghJBoxHhMfITEtJikrLi4uFx8zODMsNygtLisBCgoKDg0OGBAPFS4dHR8rLS0tLTctNy0tLjctLS0tLTU3LS0tNy0tLS0tLSsrLSstKzUtLS0rLSstKy0rLSstLf/AABEIAHgAeAMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYCBAcDAQj/xAA7EAABAwIEBAMFBQcFAQAAAAABAAIDBBEFEiExBkFRYRMicQcygZGhscHR4fAUM0JDUlSTI2JygvEV/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAMEAQIFBv/EACgRAAICAgEDAwMFAAAAAAAAAAABAgMEESESMUEFIpETUeEUYXGxwf/aAAwDAQACEQMRAD8A7iiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIDG6wlkDQXHYAn4LGonZG0ve4NaOZ0Co/EfFgkBhg1adC7a/YdlXuvjWnzz4RZxsWd80orjy/BlPxjL4hytb4d9udlccPrGzxtkbsft5hc+wzhmomOdzcrDzdofUDdXRojw+nsTowH1JVPFnbHcrXx3L+fVj+2FHMu3BJmZoNri/TmvVcarsTkfIZi7zE3/8XSuFK909Ox7/AHhcX625qbGzPrSa1ohzPTZ41cZt733/AGJxERXjmnxecrMwIuRfmNCvRYudb9c0CIPCsRd4rqWU3cL5XbEgdVPBUekrRLiDspFg8jvZrSD9ivAK0hvXJPkKO04rW0thFg5wGp/DRV3FuLYYbsZ539vdv3KxO2MF7no1qpstfTCO2S2J4nFTjNI7fZoGZxPQAaqp4hxFXyG0EGRn9T7B1/8AtYD5fFQmIcSzzm+jRsLAg29VHyVhIsS4u15300XKuz+p6hs72P6Q4pOaTfyiRqsOxGo/ePzHpnjIvy0B+5SvCuCmN7papuVrPdDrBpJ597KvT1LaUebzTaOyn3W32zd+yiK7FppzeSRxtaw1y29NlHGxJ9Tjz/Jd/T3WxdcGoxflLX+nUcV4ypYPKx3iP6N1F+5VMrcTqcRlEQA191o2Hc/mqv4vlvdvLTZ1/tsugey6kBE1RbUkNB303P2hbqU8majJ6X2IZ4tOBU7Yrql4bJHCeCImAOnJe62rRoy/Tqfp6K108DY2hjGgNGwGgsvZfF1a6YVr2rR5y/Jtue7JN/0ZIvhRSbID6o+qqLSxMvob/Pl+u631UcervCqb/wBGQ/C1/rqtorbMMj+BsCliqqyWcG8by1nIHN5i4cj5SPmVepHhoLibAc+VljTVDZWh7TdpVV9oGLeFGIA6zpN+RyD8So7ZqCcmT01O6xQXkg+K+KnTF0MJIjGhOxdY/MBVYSk3cdfXX9bLSdUX+vYrz8fuVw7Oqx7Z7XGx66IqMV+STL7fVbeCBpkfI8AthY+QjceUaD4n7FASVN7/AAUtwpKHyS05IHjRyMB2GYi7fs0WlVa61s2ypNVPRDVFYZHvkd7zzmPqdfpsvEz/AF+S06m8bnMcLPaSLHTW/ReAm+6/qrLhtmYT9qS7G+ZibX/ALtfs7pfDooyRYyFz/gdB9AuK4NRmpkEWzBmc93JsY3J9Be3Vd+4ekY6nhdGLMytyg6eUaD6KfFhp7OL61buEYr78kk5wAudtPRZqB4urvBp3H+JxaB1vv9y9+GsSFTAx9/MPK7rmC6K3rZ5wliiBFryDJc04+lLKh1ubWH4Wt9F0tcy9rcJY6Cp0ylrmX55gbj5g/RTVv3I1aNLAuJZKa4aczNPK7a+xtbUFenEWI0NeWySTSQPDQ3Vudm/Y3VHZU3tr9QfVeElUDpe2973tb9BSW1QmuTaq6dU1KD5LJU8NvLDLTzR1AF7tYbSAd2O1+SrD5HN0I82u/lWdHWSMfmpyc7bkFm9tOW5U7O9uKNe0MDcRjuS3RpmjHvabiQfoLnXYaS3FncwvV3KXTb8mjw7RMqpHRPkyDK9wcNdWi+o6WutfFqKooZGXPMOZIzVjhyc08+/RevCjHNmkc4ZQyGoLri1gGOBvfbU217L7geOMcz9iqTmppCMp3dE/k9vbqOyirxuqG+zRYyc91XKPeLRuTVVBiID55PAqf4ngZonn+pwGoOm61jw/RxnNLiLC3QhsTXOcR0F9B8VB4tRPpZHwP3FrHZpZu1zexBBCwwqjkqJGQRNJL/iLc3E8gNyfRR7e9a5LSglHqU2olvoXRVDHxQh0FBFYzSHWVw5C+xcTsBpzN9lZuEsakramOnjJjpIGgtY0kHK3Ruc2ub3B36+qoeP4kxjWUNO4GGEeZzdfEmtZ0hPMch2+an/Z3iUVDTVmIzbDJEwaFzpLElo9dL32F10aqVFdT7s87mZH1J6j2XyTHtQxcOmjpmnSMEuttnNrX9As/Zfi5MslOdc4LhzFwdh+uS5ZWY06eR88h88ly7kbnl000G+ysXs2ry3EKZl/ec4dRbKfz+isNJQKSfJ+gAiBFW2jJkq9xrghraWWJv70eZh2845fEafJWFFunowflmWR0eaJ7Sx7czXN28wNtem35ryML3RSThuaON7Gu5gF+a3blvddx479n8WIAzRHwqrr/Ld/yA59/mqbwrgk1HUzUNdSyikrGeEX6yR+KNWnO0AA6kA9bDuplYtGNHL2VpafK8jfY2Nvh+HxWcOJyRyNkbI5jwbte3ynN1uLHVWfjb2cVlA8yxMM1LvnaC5zRp77R9o0VEllcbXJ00F97fH10RNaGtcouFbx7VzsdC/wyHaPc1jGSPG9nOA1Gmo5qDo6eSp8Tw25jGx7z1yt1NufVQz5y7Um50+X5LtPs34a/ZMOrcRqG5XywzBgddtosp1PS5t8PVY2kjLbl3ZXsLMeJUcfi1MUU1Hdj3ynKDTnVhA3JFiLDso3FeJoKaN1Lh2Y57iSpcMksg5sYNxH2Op0VFzei+vkDrWsPS9z3P6+CjVUerqJ3k2OpV9XCJIVZA3sde+iyfiEsjWQg5gC7Kxtz5nf7RuSba76AKW4c4JxCvDfBpyGH+a+7IwOxOp+S6nhHCmG8Nw/t9Y9stSPdJAtnH8MLNTe53Oo7KRtJECOR49hklBIyCY/6hja97L3y5tWt6g2AJ7lW72K0Tqiv8YD/TgY4k7+Y3a0E9d1F0/DeJ4/VSVhgcxs7nHxHgtiazQANzDWw2A15+neeDuFocLpxTxXJOr3nRzndewHIcliUtoeSfRZIodAIiLYBERAFqOw+A7wxH1Yw/cttEBo/wDx6b+3g/xx/gtkxNLchaC0i1iAW26W2svVEBHHA6T+1pv8UX4JHgtI0hzaWnDhsRHEHA9ja4UiiA+WWu+kjc5sjo2F7dA4tBcB0BOoWyiA+AL6iIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiID/9k=) no-repeat center center;
 }
-#fh5co-type p {
+#inventory-section p {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.js .to-animate, .js
-.to-animate-2 {
+/* animaciones de entrada — waypoints las activa con fadeIn/fadeInUp al hacer scroll */
+.js .anim-in, .js
+.anim-in-2 {
   opacity: 0;
 }
 
-.row-padded {
+/* margen inferior genérico de filas */
+.row-gap {
   padding-bottom: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* comias.css — estilos propios | paleta: #141210 oscuro / #f5f0e6 crema / #8b6f47 cognac */
+
+/* links base */
+a { color: #8b6f47; }
+a:hover, a:focus, a:active { color: #2c2416; }
+
+/* botones principales */
+.btn-primary {
+  background: #141210;
+  color: #f5f0e6;
+  border: 2px solid #141210;
+  padding: 12px 30px;
+  letter-spacing: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  border-radius: 0;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background: #2c2416 !important;
+  border-color: #2c2416 !important;
+  color: #f5f0e6 !important;
+}
+.btn-primary.btn-outline {
+  background: transparent;
+  color: #141210;
+  border: 2px solid #141210;
+}
+.btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
+  background: #141210;
+  color: #f5f0e6;
+}
+/* foco del input en cognac en lugar del naranja del template */
+.form-control:active, .form-control:focus { border-color: #8b6f47; }
+
+
+/* --- nav --- */
+
+/* nav flotante sobre el hero, sin fondo ni bordes */
+.top-nav {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+/* quitamos las líneas decorativas que venían del template original */
+.top-nav::before, .top-nav::after { display: none !important; }
+/* el sticky nav del template no aplica acá */
+.sticky-nav { position: static !important; }
+
+/* contenedor flex del nav: logo a la izquierda, links a la derecha */
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 50px;
+}
+/* logo en itálica, color crema */
+.nav-logo a {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #f5f0e6 !important;
+  letter-spacing: 2px;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+.nav-logo a:hover { opacity: 0.8; color: #f5f0e6 !important; }
+
+/* links del menú en mayúsculas con espacio entre ellos */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.nav-links a {
+  font-family: "Merriweather", serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f5f0e6 !important;
+  text-decoration: none !important;
+  transition: color 0.3s;
+}
+/* link activo o hover en blanco completo */
+.nav-links a:hover, .nav-links a.active { color: #f5f0e6 !important; }
+
+
+/* --- hero home: portada con slider de fondo --- */
+
+/* posición relativa para que el nav absoluto quede dentro */
+#hero-section { position: relative; }
+
+/* texto alineado abajo a la izquierda */
+#hero-section .hero-text {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 70px;
+  padding-left: 60px;
+}
+/* título grande con sombra sutil */
+#hero-section .hero-text h1 {
+  font-size: 78px;
+  line-height: 1;
+  letter-spacing: 10px;
+  color: #f5f0e6;
+  font-style: italic;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  margin-bottom: 16px;
+}
+#hero-section .flexslider .hero-text h2 {
+  color: #f5f0e6;
+  letter-spacing: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Merriweather", serif;
+  margin: 20px 0 0;
+}
+/* oscurecedor del slider con leve blur */
+#hero-section .dark-overlay {
+  background: rgba(10, 8, 5, 0.58);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+/* ocultamos flechas y puntos de navegación del slider */
+.flex-control-nav, .flex-direction-nav { display: none !important; }
+/* sin borde ni sombra en el contenedor del slider */
+.flexslider { border: none !important; box-shadow: none !important; }
+
+
+/* --- page hero: cabecera compartida en cocina, historial e inventario --- */
+/* Etiquetas, Títulos y Divisores añadidos para aportar diseño editorial */
+.page-hero-content .hero-eyebrow {
+  display: block; font-family: Arial, sans-serif; font-size: 11px;
+  letter-spacing: 4px; text-transform: uppercase; color: #c8b898; margin-bottom: 20px;
+}
+.page-hero-content .hero-subtitle {
+  color: #cccccc; font-size: 16px; font-family: Arial, sans-serif;
+  font-weight: 300; max-width: 600px; margin: 0 auto; line-height: 1.5;
+}
+.page-hero-divider {
+  width: 50px; height: 1px; margin: 15px auto 25px auto;
+  /* CAMBIAR COLOR: cambie el #c8b898 por su color favorito para modificar las líneas decorativas del Hero */
+  background: #c8b898; 
+}
+.hero-auto-fade { animation: heroFadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+@keyframes heroFadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+
+
+/* contenedor con imagen de fondo, altura fija */
+.page-hero {
+  position: relative;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+/* capa oscura encima de la imagen */
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 4, 0.68);
+}
+/* área centrada con título y ruta de navegación */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+/* título de la sub-página en itálica */
+.page-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  font-style: italic;
+  color: #f5f0e6;
+  margin: 0 0 14px;
+  font-weight: 400;
+}
+/* ruta de navegación debajo del título */
+.page-hero-breadcrumb {
+  font-family: "Merriweather", serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(245, 240, 230, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.page-hero-breadcrumb a {
+  color: rgba(245, 240, 230, 0.5) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.page-hero-breadcrumb a:hover { color: #f5f0e6 !important; }
+.page-hero-breadcrumb .sep { opacity: 0.5; }
+
+
+/* --- about: sección nosotros --- */
+
+#about-section.about-centered {
+  display: block; /* Anula el flexbox de columnas */
+  background: #fbf9f4; /* Fondo crema limpio */
+  padding: 120px 0;
+}
+#about-section.about-centered .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#about-section.about-centered .about-eyebrow {
+  display: block;
+  font-family: "Merriweather", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6b5d4e;
+  margin-bottom: 24px;
+}
+#about-section.about-centered .about-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin: 0 auto 30px;
+  max-width: 700px;
+  letter-spacing: -0.5px;
+}
+#about-section.about-centered .about-desc {
+  font-family: inherit;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  margin: 0 auto 40px;
+  max-width: 600px;
+}
+#about-section.about-centered .about-link {
+  font-family: "Merriweather", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b5d4e;
+  text-decoration: none !important;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+#about-section.about-centered .about-link:hover {
+  color: #1a1a1a;
+}
+
+
+/* --- frases: carrusel de citas animado con flexslider --- */
+
+#quotes-section.quotes-redesign { 
+  background: #fbf9f4; /* Fondo crema claro */
+  padding: 120px 0; 
+}
+.quotes-eyebrow {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8b6f47;
+  margin-bottom: 12px;
+}
+.quotes-title { 
+  font-family: "Playfair Display", serif;
+  font-size: 52px; 
+  color: #1a1a1a; 
+  letter-spacing: -1px; 
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+.quotes-icon {
+  font-size: 80px;
+  color: #443c34;
+  line-height: 1;
+  margin-bottom: -15px;
+  font-family: Arial, sans-serif;
+}
+/* Forzamos al flexslider a ser transparente sin bordes feos */
+#quotes-section .flexslider {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* Contenedor de la frase para alinear al centro */
+#quotes-section blockquote {
+  border-left: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+/* Estilo del texto de la cita principal */
+#quotes-section blockquote p { 
+  color: #666; 
+  font-family: "Playfair Display", serif;
+  font-style: normal; 
+  font-size: 24px; 
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+#quotes-section blockquote p.quote-author { 
+  color: #1a1a1a !important; 
+  font-family: "Playfair Display", serif;
+  font-size: 22px !important; 
+  letter-spacing: 0px; 
+  text-transform: none; 
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+#quotes-section blockquote p.quote-role {
+  color: #888;
+  font-family: Arial, sans-serif;
+  font-size: 13px !important;
+  font-weight: normal;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+}
+/* Visibilidad de flechas del carrusel en fondos claros */
+#quotes-section .flex-direction-nav a::before {
+  color: #1a1a1a !important;
+  text-shadow: none !important;
+}
+
+
+/* --- sedes: tarjetas de las 6 ubicaciones en bogotá --- */
+
+#locations-section {
+  background: #eee7d5; /* Tono Beige clásico */
+  padding: 120px 0;
+}
+.locations-eyebrow {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+.locations-title { 
+  font-family: "Playfair Display", serif;
+  font-size: 52px; 
+  color: #1a1a1a; 
+  letter-spacing: -1px; 
+  margin-bottom: 60px;
+  font-weight: 400;
+  font-style: normal;
+}
+.locations-subtitle { 
+  color: #888;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  margin-top: -40px;
+  margin-bottom: 60px;
+}
+
+.locations-grid-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.location-card {
+  background: transparent;
+  margin-bottom: 50px;
+  overflow: hidden;
+  border: none;
+  height: 100%;
+  box-shadow: none;
+  transition: transform 0.4s ease;
+  text-align: left;
+}
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: none;
+  border-color: transparent;
+}
+/* imagen de la sede a altura fija */
+.location-card-img {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  border: none;
+}
+.location-card-body {
+  padding: 24px 0 0 0;
+}
+.location-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0px;
+  text-transform: none;
+  color: #888;
+  font-family: Arial, sans-serif;
+  margin-bottom: 12px;
+}
+.location-card-body h3 { font-family: "Playfair Display", serif; font-size: 26px; color: #1a1a1a; margin: 0 0 12px; letter-spacing: 0px; font-weight: 300; font-style: normal; }
+.location-card-body .location-address { font-size: 12px; letter-spacing: 1px; color: #8b6f47; margin-bottom: 12px; font-style: normal; text-transform: uppercase; font-weight: 600; }
+.location-card-body .location-desc { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 0; font-family: Arial, sans-serif; }
+
+
+/* --- cocina: tarjetas del menú de platos --- */
+/* Restricciones flexibles de la grilla principal para evitar colapsos visuales */
+.locations-grid-row .menu-card { height: 100%; margin-bottom: 0; }
+.locations-grid-row .col-md-4 { margin-bottom: 30px; }
+
+
+/* mismo fondo que sedes para coherencia visual */
+#menu-section { background: #faf7f2; padding: 5em 0; }
+/* etiqueta superior de la sección */
+#menu-section .section-eyebrow {
+  display: block;
+  font-family: "Merriweather", serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #8b6f47;
+  margin-bottom: 14px;
+}
+/* título centralizado del menú */
+#menu-section .heading { font-size: 38px; letter-spacing: 1px; color: #141210; margin-bottom: 10px; }
+/* descripción debajo del título del menú */
+#menu-section .sub-heading { color: #6b5d4e; font-size: 16px; margin-bottom: 50px; }
+
+/* tarjeta de plato con borde sutil */
+.menu-card {
+  background: #fff;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 18, 16, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(20, 18, 16, 0.1);
+}
+/* foto del plato a altura fija */
+.menu-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+/* envoltorio interno del plato individual */
+.menu-card-body { padding: 22px 24px 24px; }
+
+/* fila con el nombre del plato y el precio */
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.menu-card-header h3 { font-size: 20px; color: #141210; margin: 0; letter-spacing: 1px; }
+/* precio del plato en cognac */
+.menu-price {
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  color: #8b6f47;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+/* texto de descripción del plato ofrecido */
+.menu-desc { font-size: 14px; color: #6b5d4e; line-height: 1.8; margin-bottom: 10px; }
+/* lista de ingredientes al pie de la tarjeta */
+.menu-ingredients {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #9a8c80;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(20, 18, 16, 0.07);
+  padding-top: 10px;
+}
+/* botones de acción centrados al final de la sección */
+.menu-actions { text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 16px; }
+.menu-actions .btn { min-width: 180px; }
+
+
+/* --- inventario: grilla de ingredientes de la bodega --- */
+.inventory-grid { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+.inventory-card-wrap { margin-bottom: 40px; padding: 0 15px; display: flex; flex-direction: column; }
+.inv-card {
+  /* CAMBIAR FONDO: modifique el #fff para alterar el color principal del bloque de cada carta */
+  background: #fff;
+  padding: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); flex-grow: 1;
+  display: flex; flex-direction: column; text-align: center;
+  border-radius: 6px; overflow: hidden; position: relative; z-index: 1;
+  transition: transform 0.3s ease;
+}
+.inv-card:hover { transform: translateY(-5px); }
+.inv-card-img { width: 100%; height: 180px; object-fit: cover; }
+.inv-card-body { padding: 25px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.inv-card-title {
+  /* CAMBIAR TÍTULOS: reemplace 'Playfair Display' por su fuente de lujo elegida ('Roboto', 'Arial', etc.) */
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important; color: #333 !important; font-style: normal !important;
+  margin: 0 0 10px 0; text-transform: capitalize; letter-spacing: 0; font-weight: bold;
+}
+.inv-card-desc {
+  font-family: Arial, sans-serif !important; font-size: 13px !important;
+  color: #666 !important; line-height: 1.5; margin-bottom: 0;
+}
+.inv-action { margin-top: 15px; text-align: center; width: 100%; display: block; position: relative; z-index: 2; flex-shrink: 0; }
+.btn-inv {
+  display: inline-block; padding: 12px 25px; border: none; border-radius: 4px;
+  font-family: Arial, sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; font-weight: bold;
+  width: 100%; transition: background 0.3s; cursor: pointer;
+  /* CAMBIAR COLOR BOTÓN: color dorado oscuro principal (#8b6f47) de los botones de la bodega */
+  background: #8b6f47; color: #fff;
+}
+.btn-inv:hover {
+  /* CAMBIAR COLOR BOTÓN (AL PASAR MOUSE): color gris oscuro (#333) al enfocar */
+  background: #333; color: #fff;
+}
+
+/* --- historial: registro de pedidos y compras --- */
+
+/* sección de pantalla completa con imagen de fondo fija */
+#history-section {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 80px 0;
+}
+/* capa muy oscura para que el texto blanco se lea bien */
+#history-section .hist-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 4, 0.82);
+}
+#history-section .hist-content { position: relative; z-index: 2; width: 100%; }
+/* bloque de título centrado */
+#history-section .hist-header { text-align: center; margin-bottom: 60px; }
+#history-section .hist-header .section-eyebrow {
+  display: block;
+  font-family: "Merriweather", serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #8b6f47;
+  margin-bottom: 16px;
+}
+#history-section .hist-header h2 { font-size: 48px; color: #f5f0e6; font-style: italic; margin-bottom: 12px; }
+/* línea decorativa bajo el título */
+#history-section .hist-header .hist-divider { width: 40px; height: 1px; background: #8b6f47; margin: 0 auto 16px; }
+#history-section .hist-header p { color: #9a8c80; font-size: 15px; margin-bottom: 0; }
+
+/* tarjeta de registro con fondo semitransparente */
+.hist-card {
+  background: rgba(20, 18, 16, 0.75);
+  border: 1px solid rgba(139, 111, 71, 0.25);
+  padding: 44px 40px 40px;
+  text-align: center;
+  height: 100%;
+  transition: border-color 0.3s, background 0.3s;
+}
+.hist-card:hover { border-color: rgba(139, 111, 71, 0.55); background: rgba(20, 18, 16, 0.9); }
+/* ícono decorativo arriba de la tarjeta */
+.hist-card-icon { display: block; font-size: 32px; color: #8b6f47; margin-bottom: 20px; font-style: normal; }
+/* título del archivo en el historial */
+.hist-card h3 { font-size: 22px; color: #f5f0e6; letter-spacing: 1px; margin-bottom: 12px; }
+/* línea divisoria dentro de la tarjeta */
+.hist-card .hist-divider { width: 30px; height: 1px; background: #8b6f47; margin: 0 auto 20px; }
+.hist-card p { font-size: 14px; color: #9a8c80; line-height: 1.9; margin-bottom: 28px; }
+/* metadatos (id, receta, estado) */
+.hist-card .hist-meta { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b6f47; margin-bottom: 24px; display: block; }
+.hist-card .btn-primary {
+  background: transparent;
+  border: 1px solid rgba(139, 111, 71, 0.5);
+  color: #c8b898;
+  font-size: 10px;
+  letter-spacing: 3px;
+  padding: 12px 32px;
+}
+.hist-card .btn-primary:hover { background: #8b6f47 !important; border-color: #8b6f47 !important; color: #f5f0e6 !important; }
+
+
+/* --- footer --- */
+
+/* fondo casi negro con línea superior discreta */
+#site-footer { background: #0e0c0a; border-top: 1px solid rgba(245, 240, 230, 0.06); }
+#site-footer p, #site-footer a { color: #6b5d4e !important; font-size: 12px; letter-spacing: 2px; }
+#site-footer a:hover { color: #8b6f47 !important; }
+/* íconos de redes sociales */
+.social-links li a { color: #6b5d4e !important; border-color: rgba(245, 240, 230, 0.1) !important; }
+.social-links li a:hover { background: #8b6f47 !important; border-color: #8b6f47 !important; color: #f5f0e6 !important; }
+
+
+/* --- notificación: popup global que llama showNotification() desde el JS --- */
+
+/* popup fijo arriba a la derecha, invisible por defecto */
+#site-notification {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 99999;
+  min-width: 320px;
+  max-width: 420px;
+  padding: 22px 30px;
+  background: #141210;
+  border: 1px solid #8b6f47;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  font-family: "Playfair Display", serif;
+  color: #c8c2b8;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+/* clase .show lo hace visible con animación */
+#site-notification.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+/* ícono decorativo */
+#site-notification .notif-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+/* título en mayúsculas con espaciado */
+#site-notification .notif-title {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+/* mensaje principal en itálica */
+#site-notification .notif-msg { font-size: 15px; line-height: 1.6; color: #8b6f47; font-style: italic; display: block; }
+/* botón de cierre arriba a la derecha */
+#site-notification .notif-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #6b5d4e;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.3s;
+}
+#site-notification .notif-close:hover { color: #8b6f47; }
+/* variante de éxito */
+#site-notification.notif-success { border-color: #8b6f47; }
+#site-notification.notif-success .notif-title { color: #c8b898; }
+/* variante de error */
+#site-notification.notif-error { border-color: #7a2828; }
+#site-notification.notif-error .notif-title { color: #c47070; }
+#site-notification.notif-error .notif-msg { color: #c47070; }
+/* barra de progreso que se agota antes de cerrar el popup */
+#site-notification .notif-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #8b6f47;
+  animation: notif-timer 4s linear forwards;
+}
+#site-notification.notif-error .notif-bar { background: #7a2828; }
+@keyframes notif-timer {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
+<html class="no-js">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Inventario &mdash;</title>
+	<title>Comia's &mdash; Inventario</title>
 
+	<!-- hojas de estilo y librerías -->
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
@@ -16,138 +14,180 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple-line-icons.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flexslider.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?v=1.3">
 
 	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/moment.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
 
 	</head>
 	<body>
-		<div id="fh5co-container">
-			<div class="js-sticky">
-				<div class="fh5co-main-nav">
-					<div class="container-fluid">
-						<div class="fh5co-menu-1">
-							<a href="/home">Home</a>
-							<a href="/historial">Historial</a>
-						</div>
-						<div class="fh5co-logo">
-							<a href="/home">comia's</a>
-						</div>
-						<div class="fh5co-menu-2">
-							<a href="/cocina">Cocina</a>
-							<a href="/inventario">Inventario</a>
-						</div>
+		<!-- page hero: cabecera con imagen de fondo -->
+		<div class="page-hero" style="background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1920&auto=format&fit=crop);">
+			<div class="page-hero-overlay"></div>
+			<!-- nav -->
+			<div class="top-nav">
+				<div class="nav-inner">
+					<div class="nav-logo">
+						<a href="/home">Comia's</a>
 					</div>
+					<nav class="nav-links">
+						<a href="/home">Home</a>
+						<a href="/historial">Historial</a>
+						<a href="/cocina">Cocina</a>
+						<a href="/inventario" class="active">Inventario</a>
+					</nav>
 				</div>
+			</div>
+			<!-- título y breadcrumb superpuesto -->
+			<div class="page-hero-content text-center hero-auto-fade">
+				<span class="hero-eyebrow">BODEGA &amp; INSUMOS</span>
+				<h1 class="page-hero-title">Nuestros Ingredientes</h1>
+				<div class="page-hero-divider"></div>
+				<p class="hero-subtitle">Seleccionamos cada insumo con los m&aacute;s altos est&aacute;ndares de calidad para garantizar la excelencia en cada plato.</p>
 			</div>
 		</div>
 
-        <div id="fh5co-type" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/ratatouille-con-garbanzos-y-quinoa-1665049643.jpg);" data-stellar-background-ratio="0.5">
-			<div class="fh5co-overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-1">Tomato</h3>
-							<p>El tomate es una fuente importante de ciertos minerales (como el potasio y el magnesio).</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-2">Lemon</h3>
-							<p>Usada en postres, bebidas, salsas y tambien en la cocina en general.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-3">Potato</h3>
-							<p>La papa contiene varias vitaminas, incluyendo la vitamina C, riboflavina, tiamina y niacina.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-4">Rice</h3>
-							<p>Se trata de un cereal considerado alimento básico en muchas gastronomías del mundo.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-5">Ketchup</h3>
-							<p>El kétchup se elabora a partir de concentrado de tomate, mientras que la salsa de tomate se prepara a partir de tomates frescos triturados.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-6">Lettuce</h3>
-							<p>Se utiliza sobre todo para las ensaladas, aunque también se ve en otros tipos de comida.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-7">Onion</h3>
-							<p>El tipo de fibra presente en las cebollas puede reducir la probabilidad de desarrollar enfermedades cardiovasculares.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-8">Cheese</h3>
-							<p>Ayuda a formar y mantener los dientes y los huesos sanos, y es esencial para el funcionamiento del sistema nervioso y muscular.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-9">Meat</h3>
-							<p>Es una fuente de vitamina B12; esta vitamina nos ayuda a metabolizar proteínas, a formar glóbulos rojos y a darle mantenimiento al sistema nervioso.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-10">Chicken</h3>
-							<p>Fuente importante de nutrientes como proteínas, lípidos, Vitamina 3 y minerales como calcio, hierro, zinc, sodio, potasio y magnesio, entre otros.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-                    <div class="col-md-4 col-md-offset-4 text-center">
-                        <p><a href="/api/inventario/consultar_inventario" class="btn btn-primary btn-outline">Consultar Ingredientes</a></p>
+                <!-- inventario: grilla de ingredientes de la bodega, rediseñada desde cero -->
+        <div id="inventory-section" style="background: #eee7d5; padding: 60px 0 120px 0;">
+            <div class="container">
+                <div class="row inventory-grid">
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&auto=format&fit=crop" class="inv-card-img" alt="Tomate">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Tomate</h4>
+                                <p class="inv-card-desc">Fuente de potasio y magnesio, base de nuestras salsas artesanales.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('tomato')" class="btn-inv">Comprar</button></div>
                     </div>
-                </div>
-				<div class="row">
-                    <div class="col-md-4 col-md-offset-4 text-center">
-                        <p><button onclick="comprar('tomato')" class="btn btn-primary btn-outline">Comprar Tomato</button></p>
-                        <p><button onclick="comprar('lemon')" class="btn btn-primary btn-outline">Comprar Lemon</button></p>
-                        <p><button onclick="comprar('potato')" class="btn btn-primary btn-outline">Comprar Potato</button></p>
-                        <p><button onclick="comprar('rice')" class="btn btn-primary btn-outline">Comprar Rice</button></p>
-                        <p><button onclick="comprar('ketchup')" class="btn btn-primary btn-outline">Comprar Ketchup</button></p>
-                        <p><button onclick="comprar('lettuce')" class="btn btn-primary btn-outline">Comprar Lettuce</button></p>
-                        <p><button onclick="comprar('onion')" class="btn btn-primary btn-outline">Comprar Onion</button></p>
-                        <p><button onclick="comprar('cheese')" class="btn btn-primary btn-outline">Comprar Cheese</button></p>
-                        <p><button onclick="comprar('meat')" class="btn btn-primary btn-outline">Comprar Meat</button></p>
-                        <p><button onclick="comprar('chicken')" class="btn btn-primary btn-outline">Comprar Chicken</button></p>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&auto=format&fit=crop" class="inv-card-img" alt="Limón">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Limón</h4>
+                                <p class="inv-card-desc">Indispensable en postres, bebidas y aderezos cítricos de la casa.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('lemon')" class="btn-inv">Comprar</button></div>
                     </div>
-                </div>
-			</div>
-		</div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&auto=format&fit=crop" class="inv-card-img" alt="Papa">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Papa</h4>
+                                <p class="inv-card-desc">Rica en vitamina C y niacina, protagonista de nuestros platos típicos.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('potato')" class="btn-inv">Comprar</button></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop" class="inv-card-img" alt="Arroz">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Arroz</h4>
+                                <p class="inv-card-desc">Cereal base de la gastronomía colombiana, perfecto para cualquier plato.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('rice')" class="btn-inv">Comprar</button></div>
+                    </div>
 
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://osojimix.com/wp-content/uploads/2021/04/ketchup-500x375.jpg" class="inv-card-img" alt="Ketchup">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Ketchup</h4>
+                                <p class="inv-card-desc">Elaborado de concentrado selecto, ideal para preparaciones especiales.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('ketchup')" class="btn-inv">Comprar</button></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=600&auto=format&fit=crop" class="inv-card-img" alt="Lechuga">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Lechuga</h4>
+                                <p class="inv-card-desc">Fresca y crujiente, columna vertebral de nuestras ensaladas de temporada.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('lettuce')" class="btn-inv">Comprar</button></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoq68LEFlIjmBVBq5DywWH2iqV_tGTrBxyg&s" class="inv-card-img" alt="Cebolla">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Cebolla</h4>
+                                <p class="inv-card-desc">Rica en fibra disoluble, aporta profundidad y sabor a guisos.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('onion')" class="btn-inv">Comprar</button></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&auto=format&fit=crop" class="inv-card-img" alt="Queso">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Queso</h4>
+                                <p class="inv-card-desc">Fuente de calcio y proteína, usado en gratinados y rellenos.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('cheese')" class="btn-inv">Comprar</button></div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://a.storyblok.com/f/160385/119a1290ec/shutterstock_1699483486.jpg/m/filters:quality(70)/" class="inv-card-img" alt="Carne">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Carne</h4>
+                                <p class="inv-card-desc">Cortes prime seleccionados, ricos en vitamina B12 para platos de res.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('meat')" class="btn-inv">Comprar</button></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 inventory-card-wrap">
+                        <!-- EDITAR INGREDIENTE: Cambia el nombre, descripción y botón de compra aquí abajo -->
+                        <div class="inv-card">
+                            <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=600&auto=format&fit=crop" class="inv-card-img" alt="Pollo">
+                            <div class="inv-card-body">
+                                <h4 class="inv-card-title">Pollo</h4>
+                                <p class="inv-card-desc">Fuente de proteína magra de calidad, marinado en especias criollas.</p>
+                            </div>
+                        </div>
+                        <div class="inv-action"><button onclick="comprar('chicken')" class="btn-inv">Comprar</button></div>
+                    </div>
+                </div>
+                <div class="inv-consultar text-center" style="margin-top: 40px;">
+                    <a href="/api/inventario/consultar_inventario" class="btn btn-primary">Consultar Inventario Completo</a>
+                </div>
+            </div>
+        </div>
+
+		<!-- función que llama a la API para comprar un ingrediente -->
 		<script>
 		function comprar(ingrediente) {
 			fetch('/api/inventario/comprar/' + ingrediente, { method: 'POST' })
 				.then(response => response.json())
-				.then(data => alert(data.mensaje + ' Cantidad: ' + data.cantidad))
-				.catch(error => alert('Error al comprar'));
+				.then(data => showNotification(data.mensaje + ' &mdash; Cantidad: ' + data.cantidad, 'success'))
+				.catch(error => showNotification('No fue posible completar la compra. Por favor intente nuevamente.', 'error'));
 		}
 		</script>
 
 	</body>
 </html>
+
+
+

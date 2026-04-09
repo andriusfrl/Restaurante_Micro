@@ -1,115 +1,86 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
+<html class="no-js">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Historial &mdash;</title>
+	<title>Comia's &mdash; Historial</title>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- hojas de estilo y librerías -->
 	<link rel="shortcut icon" href="favicon.ico">
-
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
-	
 
-	<!-- Animate.css -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
-	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
-	<!-- Simple Line Icons -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple-line-icons.css') }}">
-	<!-- Datetimepicker -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
-	<!-- Flexslider -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flexslider.css') }}">
-	<!-- Bootstrap  -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
-
-	<!-- Modernizr JS -->
 	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 	</head>
 	<body>
-		<div id="fh5co-container">
-			<div class="js-sticky">
-				<div class="fh5co-main-nav">
-					<div class="container-fluid">
-						<div class="fh5co-menu-1">
-							<a href="/home" data-nav-section="home">Home</a>
-							<a href="/historial" data-nav-section="about">Historial</a>
-						</div>
-						<div class="fh5co-logo">
-							<a href="/home">comia's</a>
-						</div>
-						<div class="fh5co-menu-2">
-							<a href="/cocina" data-nav-section="menu">Cocina</a>
-							<a href="/inventario" data-nav-section="events">Inventario</a>
-						</div>
+		<!-- page hero: cabecera con imagen de fondo -->
+		<div class="page-hero" style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&auto=format&fit=crop);">
+			<div class="page-hero-overlay"></div>
+			<!-- nav -->
+			<div class="top-nav">
+				<div class="nav-inner">
+					<div class="nav-logo">
+						<a href="/home">Comia's</a>
 					</div>
+					<nav class="nav-links">
+						<a href="/home">Home</a>
+						<a href="/historial" class="active">Historial</a>
+						<a href="/cocina">Cocina</a>
+						<a href="/inventario">Inventario</a>
+					</nav>
 				</div>
+			</div>
+			<!-- título y breadcrumb superpuesto -->
+			<div class="page-hero-content text-center hero-auto-fade">
+				<span class="hero-eyebrow">REGISTRO &amp; TRAZABILIDAD</span>
+				<h1 class="page-hero-title">Historial</h1>
+				<div class="page-hero-divider"></div>
+				<p class="hero-subtitle">Consulta el registro completo de pedidos y compras de ingredientes realizados en el sistema.</p>
 			</div>
 		</div>
 
-        <div id="fh5co-events" data-section="events" style="background-image: url(https://media.istockphoto.com/id/956559528/photo/woman-enjoying-eating-burger-at-restaurant.jpg?s=612x612&w=0&k=20&c=PM-qW5UvF_1d6yr2HmJeUBU3LuISDys0lPFnebMwvjA=);" data-stellar-background-ratio="0.5">
-			<div class="fh5co-overlay"></div>
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading">Historial</h2>
-						<p class="sub-heading">Aqui podras ver el historial de pedidos realizados a la cocina</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Pedidos</h3>
-							<span class="fh5co-event-meta"></span>
-							<p> Pueden verse en progreso y finalizados
-								(id,receta_id, estado)
-							</p>
-							<p><a href="/api/historial/historial_pedidos" class="btn btn-primary btn-outline">Ver pedidos!</a></p>
-						</div>
-					</div>
+        <!-- historial: registro de pedidos y compras -->
+        <div id="history-section" style="background: #eee7d5; padding: 60px 0 120px 0;">
+            <div class="hist-content">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="fh5co-event to-animate-2">
-                                <h3>Pedidos ingredientes comprados</h3>
-                                <span class="fh5co-event-meta"></span>
-                                <p> Ingredientes comprados en la app
-									(id,ingrediente_id, cantidad_compras, fecha_compra)
-								</p>
-                                <p><a href="/api/historial/historial_compras" class="btn btn-primary btn-outline">Ver pedidos!</a></p>
+                        <div class="col-md-5 col-md-offset-1 ">
+                            <div class="hist-card">
+                                <span class="hist-card-icon">&#9676;</span>
+                                <h3>Pedidos de Cocina</h3>
+                                <div class="hist-divider"></div>
+                                <span class="hist-meta">id &middot; receta &middot; estado</span>
+                                <p>Visualiza todos los pedidos realizados a la cocina, incluyendo los que est&aacute;n en proceso y los finalizados, con su receta y estado actual.</p>
+                                <a href="/api/historial/historial_pedidos" class="btn btn-primary">Ver Pedidos</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 ">
+                            <div class="hist-card">
+                                <span class="hist-card-icon">&#9638;</span>
+                                <h3>Compras de Ingredientes</h3>
+                                <div class="hist-divider"></div>
+                                <span class="hist-meta">id &middot; ingrediente &middot; cantidad &middot; fecha</span>
+                                <p>Consulta el registro detallado de todos los ingredientes adquiridos en el marketplace, con cantidad comprada y fecha de cada transacci&oacute;n.</p>
+                                <a href="/api/historial/historial_compras" class="btn btn-primary">Ver Compras</a>
                             </div>
                         </div>
                     </div>
-			    </div>
-		    </div>
-	    </div>
-	<!-- jQuery -->
+                </div>
+            </div>
+        </div>
+	<!-- scripts al final para no bloquear el render -->
 	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-	<!-- jQuery Easing -->
 	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
-	<!-- Bootstrap -->
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-	<!-- Bootstrap DateTimePicker -->
 	<script src="{{ url_for('static', filename='js/moment.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
-	<!-- Waypoints -->
-	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
-	<!-- Stellar Parallax -->
-	<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
-	<!-- Flexslider -->
-	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js') }}"></script>
-	<!-- Main JS -->
 	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<script src="js/main.js"></script>
 
     </body>
 </html>

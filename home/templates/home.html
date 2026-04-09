@@ -1,184 +1,147 @@
 <!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Comia's &mdash; Alta Cocina Bogotana</title>
 
-	<html class="no-js">
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Comia's &mdash; Hecho por Andres Rodriguez y Juan Olaya
-	</title>
+<!-- hojas de estilo y librerías -->
+<link rel="shortcut icon" href="favicon.ico">
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple-line-icons.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flexslider.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
-	
+<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple-line-icons.css') }}">
-	<!-- Datetimepicker -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
-	<!-- Flexslider -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flexslider.css') }}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
-
-	<!-- Modernizr JS -->
-	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
-
-	</head>
+</head>
 	<body>
 
-	<div id="fh5co-container">
-		<div id="fh5co-home" class="js-fullheight" data-section="home">
+	<!-- hero: portada con slider de fondo -->
+	<div id="site-wrapper">
+		<div id="hero-section" class="full-height" data-section="home">
+			<!-- nav -->
+			<div class="top-nav">
+				<div class="nav-inner">
+					<div class="nav-logo">
+						<a href="/home">Comia's</a>
+					</div>
+					<nav class="nav-links">
+						<a href="/home" class="active">Home</a>
+						<a href="/historial">Historial</a>
+						<a href="/cocina">Cocina</a>
+						<a href="/inventario">Inventario</a>
+					</nav>
+				</div>
+			</div>
+			<!-- slider con parallax -->
 			<div class="flexslider">
-				<div class="fh5co-overlay"></div>
-				<div class="fh5co-text">
-					<div class="container">
-						<div class="row">
-							<h1 class="to-animate">Comia's</h1>
-							<h2 class="to-animate">made by Andres Rodriguez & Juan Olaya</h2>
-						</div>
+				<div class="dark-overlay"></div>
+				<div class="hero-text">
+					<div>
+						<h1 class="anim-in">Comia's</h1>
+						<h2 class="anim-in">made by Andres Rodriguez &amp; Juan Olaya</h2>
 					</div>
 				</div>
 			  	<ul class="slides">
-			   	<li style="background-image: url(https://st.depositphotos.com/1001564/2470/i/450/depositphotos_24704059-stock-photo-background.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(https://img.freepik.com/free-vector/background-gradient-green-tones_23-2148373603.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696896000&semt=ais);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148373477.jpg);" data-stellar-background-ratio="0.5"></li>
+			   	<li style="background-image: url(https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&auto=format&fit=crop);" data-stellar-background-ratio="0.5"></li>
+			   	<li style="background-image: url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&auto=format&fit=crop);" data-stellar-background-ratio="0.5"></li>
 			  	</ul>
-
-			</div>
-		</div>
-		
-		<div class="js-sticky">
-			<div class="fh5co-main-nav">
-				<div class="container-fluid">
-					<div class="fh5co-menu-1">
-						<a href="/home" data-nav-section="home">Home</a>
-						<a href="/historial" data-nav-section="about">Historial</a>
-					</div>
-					<div class="fh5co-logo">
-						<a href="/home">Comia's</a>
-					</div>
-					<div class="fh5co-menu-2">
-						<a href="/cocina" data-nav-section="menu">Cocina</a>
-						<a href="/inventario" data-nav-section="events">Inventario</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-about" data-section="about">
-		<div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url(https://watermark.lovepik.com/photo/20211130/large/lovepik-western-food-platter-picture_501212817.jpg)"></div>
-		<div class="fh5co-2col fh5co-text">
-			<h2 class="heading to-animate">Sobre nosotros</h2>
-			<p class="to-animate"><span class="firstcharacter">E</span>stán bienvenidos a nuestro nuevo restaurante, los atenderemos con los mejores lujos de todo Bogotá DC. Fue diseñada y desarrollada con Flask, Python, Docker. Hecha con mucho sudor, lágrimas, esfuerzo, disciplina y prompts.</p>
-			<p class="text-center to-animate"><a href="https://wa.me/+573154513544/?text=Escribenos%20para%20saber%20mas%20del%20restaurante!" class="btn btn-primary btn-outline">Contactanos</a></p>
+	<!-- about: sección nosotros -->
+	<div id="about-section" data-section="about" class="about-centered">
+		<div class="container text-center">
+			<span class="about-eyebrow anim-in">SOBRE NOSOTROS</span>
+			<h2 class="about-heading anim-in">Están bienvenidos a nuestro nuevo restaurante</h2>
+			<p class="about-desc anim-in">Los atenderemos con los mejores lujos de todo Bogotá DC. Fue diseñada y desarrollada con Flask, Python, Docker. Hecha con mucho sudor, lágrimas, esfuerzo, disciplina y prompts.</p>
+			<p class="anim-in"><a href="https://wa.me/+573154513544/?text=Escribenos%20para%20saber%20mas%20del%20restaurante!" class="about-link">CONTACTANOS &rarr;</a></p>
 		</div>
 	</div>
 
-	<div id="fh5co-sayings">
+
+
+	<!-- sedes: 6 ubicaciones del restaurante en bogotá -->
+	<div id="locations-section">
 		<div class="container">
-			<div class="row to-animate">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<blockquote>
-								<p>&ldquo;Barriga llena corazón contento.&rdquo;</p>
-								<p class="quote-author">&mdash; Nicolas Sabogal</p>
-							</blockquote>
-						</li>
-						<li>
-							<blockquote>
-								<p>&ldquo;Bueno, bonito y barato.&rdquo;</p>
-								<p class="quote-author">&mdash; Edgar Dorantes</p>
-							</blockquote>
-						</li>
-						<li>
-							<blockquote>
-								<p>&ldquo;En el comer esta el vivir.&rdquo;</p>
-								<p class="quote-author">&mdash; Mauricio Garces</p>
-							</blockquote>
-						</li>
-						<li>
-							<blockquote>
-								<p>&ldquo;Indio comido, indio ido.&rdquo;</p>
-								<p class="quote-author">&mdash; Olmer Garcia</p>
-							</blockquote>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-featured" data-section="locatios">
-		<div class="container">
-			<div class="row text-center fh5co-heading row-padded">
+			<div class="row text-center">
 				<div class="col-md-8 col-md-offset-2">
-					<h2 class="heading to-animate">Locations</h2>
-					<p class="sub-heading to-animate">Encuentra tu comia's mas cercana.</p>
+					<span class="locations-eyebrow">Nuestras Sedes</span>
+					<h2 class="locations-title">Comia's en Bogot&aacute;</h2>
+					<p class="locations-subtitle">Seis experiencias gastron&oacute;micas &uacute;nicas en la capital colombiana.</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="fh5co-grid">
-					<div class="fh5co-v-half to-animate-2">
-						<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/277/2023/01/10022927/Eden-Restaurant-1-1.jpg)"></div>
-						<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-							<h2>Usaquen</h2>
-							<span class="pricing">4 stars</span>
-							<p>Av. C. 125 #32- 86, Usaquén, Bogotá, Cundinamarca</p>
+			<div class="row locations-grid-row">
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/277/2023/01/10022927/Eden-Restaurant-1-1.jpg)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733;&#9733;&#9733;&#9733; &mdash; Alta cocina</span>
+							<h3>Usaqu&eacute;n</h3>
+							<p class="location-address">Av. C. 125 #32-86, Usaqu&eacute;n</p>
+							<p class="location-desc">Inmersa en el barrio hist&oacute;rico de Usaqu&eacute;n, nuestra sede ofrece una experiencia culinaria rodeada de arte y arquitectura colonial.</p>
 						</div>
 					</div>
-					<div class="fh5co-v-half">
-						<div class="fh5co-h-row-2 to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://thumbs.dreamstime.com/b/luxury-terrace-balcony-dining-table-chairs-beautiful-tree-arch-restaurant-resort-outdoor-area-space-text-150861601.jpg)"></div>
-							<div class="fh5co-v-col-2 fh5co-text arrow-left">
-								<h2>Santa Fe</h2>
-								<span class="pricing">5 stars</span>
-								<p>Cra. 4 #22-61, Bogotá</p>
-							</div>
-						</div>
-						<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://top10hedonist.com/wp-content/uploads/2016/05/Screen-Shot-2019-05-15-at-11.14.03-AM.png)"></div>
-							<div class="fh5co-v-col-2 fh5co-text arrow-right">
-								<h2>Kennedy</h2>
-								<span class="pricing">4 stars</span>
-								<p>Cra. 71d #1-14 Sur, Bogotá</p>
-							</div>
+				</div>
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://thumbs.dreamstime.com/b/luxury-terrace-balcony-dining-table-chairs-beautiful-tree-arch-restaurant-resort-outdoor-area-space-text-150861601.jpg)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Fine dining</span>
+							<h3>Santa Fe</h3>
+							<p class="location-address">Cra. 4 #22-61, Bogot&aacute;</p>
+							<p class="location-desc">En el centro hist&oacute;rico de Bogot&aacute;, fusionamos la riqueza cultural de la ciudad con la sofisticaci&oacute;n de la haute cuisine.</p>
 						</div>
 					</div>
-
-					<div class="fh5co-v-half">
-						<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://lh3.googleusercontent.com/p/AF1QipMzTOcL4h-t-NYSKRI6L__PGcbrHJigk1m-cedK=w1080-h608-p-no-v0)"></div>
-							<div class="fh5co-v-col-2 fh5co-text arrow-right">
-								<h2>Engativa</h2>
-								<span class="pricing">4 Stars</span>
-								<p>20, Tv. 94 #80, Bogotá</p>
-							</div>
-						</div>
-						<div class="fh5co-h-row-2 to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/interiors-emily-andrews-3-1658416499.jpg)"></div>
-							<div class="fh5co-v-col-2 fh5co-text arrow-left">
-								<h2>Ciudad bolivar</h2>
-								<span class="pricing">5 stars</span>
-								<p>Dg. 72a Sur #27r47, Bogotá</p>
-							</div>
+				</div>
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://top10hedonist.com/wp-content/uploads/2016/05/Screen-Shot-2019-05-15-at-11.14.03-AM.png)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733;&#9733;&#9733;&#9733; &mdash; Bistro</span>
+							<h3>Kennedy</h3>
+							<p class="location-address">Cra. 71d #1-14 Sur, Bogot&aacute;</p>
+							<p class="location-desc">Un refugio gastron&oacute;mico en el coraz&oacute;n del sur de Bogot&aacute;, donde los sabores auténticos de Colombia cobran vida.</p>
 						</div>
 					</div>
-					<div class="fh5co-v-half to-animate-2">
-						<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://images.myguide-cdn.com/vietnam/companies/bootleg-dj-cafe/large/bootleg-dj-cafe-194755.jpg)"></div>
-						<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-							<h2>Suba</h2>
-							<span class="pricing">1 start</span>
-							<p>Mucho gomelo / Cra. 58d #146-51, Bogotá.</p>
+				</div>
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://lh3.googleusercontent.com/p/AF1QipMzTOcL4h-t-NYSKRI6L__PGcbrHJigk1m-cedK=w1080-h608-p-no-v0)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733;&#9733;&#9733;&#9733; &mdash; Lounge</span>
+							<h3>Engativ&aacute;</h3>
+							<p class="location-address">Tv. 94 #80, Bogot&aacute;</p>
+							<p class="location-desc">Ambiente c&aacute;lido y acogedor en el occidente bogotano, ideal para celebraciones &iacute;ntimas y cenas en familia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/interiors-emily-andrews-3-1658416499.jpg)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Gourmet</span>
+							<h3>Ciudad Bol&iacute;var</h3>
+							<p class="location-address">Dg. 72a Sur #27r47, Bogot&aacute;</p>
+							<p class="location-desc">Nuestra sede m&aacute;s emblem&aacute;tica, con una terraza panorámica y men&uacute; degustaci&oacute;n que celebra los ingredientes del sur.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="location-card">
+						<div class="location-card-img" style="background-image: url(https://images.myguide-cdn.com/vietnam/companies/bootleg-dj-cafe/large/bootleg-dj-cafe-194755.jpg)"></div>
+						<div class="location-card-body">
+							<span class="location-tag">&#9733; &mdash; Caf&eacute; bar</span>
+							<h3>Suba</h3>
+							<p class="location-address">Cra. 58d #146-51, Bogot&aacute;</p>
+							<p class="location-desc">Un espacio bohemio y vibrante en el norte de la ciudad, perfecto para desayunos de autor y noches de coctelería artesanal.</p>
 						</div>
 					</div>
 				</div>
@@ -186,21 +149,66 @@
 		</div>
 	</div>
 
-	<div id="fh5co-footer">
+	<!-- frases: carrusel de citas (Testimonials) -->
+	<div id="quotes-section" class="quotes-redesign">
+		<div class="container text-center">
+			<span class="quotes-eyebrow">TESTIMONIALS</span>
+			<h2 class="quotes-title">Words From Our Guests</h2>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="quotes-icon">❝</div>
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<blockquote>
+									<p>"Barriga llena corazón contento."</p>
+									<p class="quote-author">Nicolas Sabogal</p>
+									<p class="quote-role">Guest</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>"Bueno, bonito y barato."</p>
+									<p class="quote-author">Edgar Dorantes</p>
+									<p class="quote-role">Guest</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>"En el comer esta el vivir."</p>
+									<p class="quote-author">Mauricio Garces</p>
+									<p class="quote-role">Guest</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>"Indio comido, indio ido."</p>
+									<p class="quote-author">Olmer Garcia</p>
+									<p class="quote-role">Guest</p>
+								</blockquote>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="site-footer">
 		<div class="container">
-			<div class="row row-padded">
+			<div class="row row-gap">
 				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2023 UJTL ARQ-SW Restaurante <br> Designed by Andres Rodriguez & Juan Olaya
-					</p>
-					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
+					<p class="anim-in">&copy; 2024 Comia's &mdash; Alta Cocina Bogotana</p>
+					<p class="text-center anim-in"><a href="#" class="go-top">Go To Top</a></p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="https://www.facebook.com/utadeo.edu.co/?locale=es_LA"><i class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="https://twitter.com/Utadeo_edu_co?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="https://www.instagram.com/utadeo.edu.co/?hl=es"><i class="icon-instagram"></i></a></li>
+					<ul class="social-links">
+						<li class="anim-in-2"><a href="https://www.facebook.com/utadeo.edu.co/?locale=es_LA"><i class="icon-facebook"></i></a></li>
+						<li class="anim-in-2"><a href="https://twitter.com/Utadeo_edu_co?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="icon-twitter"></i></a></li>
+						<li class="anim-in-2"><a href="https://www.instagram.com/utadeo.edu.co/?hl=es"><i class="icon-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>
